@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="uninstallRegistry" xml:space="preserve">
+    <value>[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION]
+"FlashHelperService.exe"=-
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Control Panel\Extended Properties\System.ControlPanel.Category]
+"${SYSTEM_64_PATH}\\FlashPlayerCPLApp.cpl"=-
+
+[-HKEY_CURRENT_USER\Software\FlashCenter]
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\App Paths\FlashCenter.exe]
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\FlashCenter]
+[-HKEY_LOCAL_MACHINE\Software\Classes\AppID\{119DA84B-E3DB-4D47-A8DD-7FF6D5804689}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\AppID\{B9020634-CE8F-4F09-9FBC-D108A73A4676}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\TypeLib\{37EF68ED-16D3-4191-86BF-AB731D75AAB7}]
+[-HKEY_LOCAL_MACHINE\System\ControlSet001\services\Flash Helper Service]
+[-HKEY_LOCAL_MACHINE\System\ControlSet001\services\FlashCenterService]
+[-HKEY_LOCAL_MACHINE\System\CurrentControlSet\services\Flash Helper Service]
+[-HKEY_LOCAL_MACHINE\System\CurrentControlSet\services\FlashCenterService]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\MacromediaFlashPaper.MacromediaFlashPaper]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\{FAF199D2-BFA7-4394-A4DE-044A08E59B32}]
+
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashPlayerUpdateService.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashUtil32_${VERSION_PATH}_ActiveX.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashUtil64_${VERSION_PATH}_ActiveX.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashUtil32_${VERSION_PATH}_Plugin.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashUtil64_${VERSION_PATH}_Plugin.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashPlayerPlugin_${VERSION_PATH}.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashUtil32_${VERSION_PATH}_pepper.exe]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashUtil64_${VERSION_PATH}_pepper.exe]
+
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\{FAF199D2-BFA7-4394-A4DE-044A08E59B32}]
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Adobe Flash Player ActiveX]
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Adobe Flash Player NPAPI]
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Adobe Flash Player PPAPI]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\Clean Flash Player]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\.mfp]
+[-HKEY_LOCAL_MACHINE\Software\Classes\.sol]
+[-HKEY_LOCAL_MACHINE\Software\Classes\.sor]
+[-HKEY_LOCAL_MACHINE\Software\Classes\.spl]
+[-HKEY_LOCAL_MACHINE\Software\Classes\.swf]
+[-HKEY_LOCAL_MACHINE\Software\Classes\AppID\{B9020634-CE8F-4F09-9FBC-D108A73A4676}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\CLSID\{B019E3BF-E7E5-453C-A2E4-D2C18CA0866F}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\CLSID\{D27CDB6E-AE6D-11cf-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\FlashFactory.FlashFactory]
+[-HKEY_LOCAL_MACHINE\Software\Classes\FlashFactory.FlashFactory.1]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Interface\{299817DA-1FAC-4CE2-8F48-A108237013BD}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Interface\{307F64C0-621D-4D56-BBC6-91EFC13CE40D}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Interface\{57A0E747-3863-4D20-A811-950C84F1DB9B}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Interface\{86230738-D762-4C50-A2DE-A753E5B1686F}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Interface\{D27CDB6C-AE6D-11CF-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Interface\{D27CDB6D-AE6D-11CF-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\MIME\Database\Content Type\application/futuresplash]
+[-HKEY_LOCAL_MACHINE\Software\Classes\MIME\Database\Content Type\application/x-shockwave-flash]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.1]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.2]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.3]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.4]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.5]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.6]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.7]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.8]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.9]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.10]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.11]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.12]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.13]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.14]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.15]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.16]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.17]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.18]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.19]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.20]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.21]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.22]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.23]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.24]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.25]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.26]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.27]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.28]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.29]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.30]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.31]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.32]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.33]
+[-HKEY_LOCAL_MACHINE\Software\Classes\ShockwaveFlash.ShockwaveFlash.34]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\TypeLib\{57A0E746-3863-4D20-A811-950C84F1DB9B}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\TypeLib\{D27CDB6B-AE6D-11CF-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\TypeLib\{FAB3E735-69C7-453B-A446-B6823C6DF1C9}]
+
+[-HKEY_LOCAL_MACHINE\Software\Macromedia]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB6E-AE6D-11CF-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB70-AE6D-11cf-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\NavigatorPluginsList\Shockwave Flash]
+
+[-HKEY_LOCAL_MACHINE\Software\MozillaPlugins\@adobe.com/FlashPlayer]
+
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\miniconfig]
+[-HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\miniconfig]</value>
+  </data>
+  <data name="uninstallRegistry64" xml:space="preserve">
+    <value>[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION]
+"FlashHelperService.exe"=-
+
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Control Panel\Extended Properties\System.ControlPanel.Category]
+"${SYSTEM_32_PATH}\\FlashPlayerCPLApp.cpl"=-
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\CLSID\{B019E3BF-E7E5-453C-A2E4-D2C18CA0866F}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\CLSID\{D27CDB6E-AE6D-11cf-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\CLSID\{D27CDB70-AE6D-11cf-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\Interface\{299817DA-1FAC-4CE2-8F48-A108237013BD}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\Interface\{307F64C0-621D-4D56-BBC6-91EFC13CE40D}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\Interface\{57A0E747-3863-4D20-A811-950C84F1DB9B}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\Interface\{86230738-D762-4C50-A2DE-A753E5B1686F}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\Interface\{D27CDB6C-AE6D-11CF-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Classes\Wow6432Node\Interface\{D27CDB6D-AE6D-11CF-96B8-444553540000}]
+
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia]
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB6E-AE6D-11CF-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB70-AE6D-11cf-96B8-444553540000}]
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\NavigatorPluginsList\Shockwave Flash]
+
+[-HKEY_LOCAL_MACHINE\Software\Wow6432Node\MozillaPlugins\@adobe.com/FlashPlayer]</value>
+  </data>
+</root>

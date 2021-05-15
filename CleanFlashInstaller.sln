@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanFlashInstaller", "CleanFlashInstaller\CleanFlashInstaller.csproj", "{317B6619-2419-4778-95A2-1A97DC55AB83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanFlashUninstaller", "CleanFlashUninstaller\CleanFlashUninstaller.csproj", "{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanFlashCommon", "CleanFlashCommon\CleanFlashCommon.csproj", "{D00F629B-455A-42DE-B2FA-A3759A3095AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Debug|x64.ActiveCfg = Debug|x64
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Debug|x64.Build.0 = Debug|x64
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Debug|x86.ActiveCfg = Debug|x86
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Debug|x86.Build.0 = Debug|x86
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Release|x64.ActiveCfg = Release|x64
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Release|x64.Build.0 = Release|x64
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Release|x86.ActiveCfg = Release|x86
+		{317B6619-2419-4778-95A2-1A97DC55AB83}.Release|x86.Build.0 = Release|x86
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Debug|x64.Build.0 = Debug|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Debug|x86.Build.0 = Debug|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Release|x64.ActiveCfg = Release|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Release|x64.Build.0 = Release|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Release|x86.ActiveCfg = Release|Any CPU
+		{E193EEA6-BE73-4E34-BEB0-E13AC8D30C5C}.Release|x86.Build.0 = Release|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Debug|x64.Build.0 = Debug|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Debug|x86.Build.0 = Debug|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Release|x64.ActiveCfg = Release|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Release|x64.Build.0 = Release|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Release|x86.ActiveCfg = Release|Any CPU
+		{D00F629B-455A-42DE-B2FA-A3759A3095AE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3F04969-B085-46D9-A518-4264D1988548}
+	EndGlobalSection
+EndGlobal

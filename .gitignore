@@ -1,0 +1,13 @@
+.vs/
+packages/
+
+bin
+obj
+
+*.exe
+*.obj
+*.pdb
+*.user
+*.suo
+
+flash_*.zip
