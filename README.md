@@ -14,7 +14,9 @@ The original Flash Player was discontinued on January 12th, 2021. Adobe is commi
 
 Clean Flash Player uses a modified version of this updated Flash Player version, keeping Flash Player clean from adware.
 
-Google Chrome, Mozilla Firefox and Internet Explorer browser plugins are supported. Clean Flash Player does not currently ship with a standalone Flash Player.
+Google Chrome, Mozilla Firefox and Internet Explorer browser plugins are supported. Clean Flash Player ships with a standalone Flash Projector as well.
+
+**Clean Flash is compatible and tested with Windows XP, Windows Vista, Windows 7, Windows 8.1 and Windows 10**. If attempting to run on Windows XP, download [.NET Framework 4.0](https://dotnet.microsoft.com/download/dotnet-framework/net40) first and optionally update to [.NET Framework 4.0.3](https://www.microsoft.com/en-us/download/details.aspx?id=29053).
 
 ## Browser compatibility
 
@@ -33,12 +35,9 @@ To keep using Flash Player on **Mozilla Firefox**, install [**Basilisk Browser**
 - Extract the installer and run it
 - Accept the disclaimer
 - Choose which browser plugins to install
+- Choose to install the standalone projector or not
 - Close all browser windows, or let the installer close them for you
 - Press the "Install" button and wait for Flash Player to install
-- Enjoy using Flash Player in the browser!
+- Enjoy using Flash Player!
 
 **P.S.** The Clean Flash Player installer will automatically close all browser windows when updating Flash Player. It will also uninstall all previous versions of Flash Player, as well as the adware Flash Center application. The installer will also create an uninstaller that you can use to uninstall Clean Flash at any time.
-
-## Future updates
-
-We are exploring the option of shipping a standalone Flash Player version with the Clean Flash Player installer.
