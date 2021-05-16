@@ -24,7 +24,7 @@ Newer versions of Google Chrome and Mozilla Firefox do not support Flash Player 
 
 To keep using Flash Player on **Google Chrome**, install an older version of Chrome. The last supported version is Chrome 87.0.4280.168.
 
-To keep using Flash Player on **Mozilla Firefox**, install [**Basilisk Browser**](https://basilisk-browser.org), a fork of Mozilla Firefox with built-in Flash Player support.
+To keep using Flash Player on **Mozilla Firefox**, install [**Basilisk Browser**](https://basilisk-browser.org) or [**Waterfox**](https://waterfox.net). Both of them are forks of Mozilla Firefox with built-in Flash Player support.
 
 **Internet Explorer** still supports Flash Player on Windows.
 
