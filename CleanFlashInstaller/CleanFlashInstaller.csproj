@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Installer.cs" />
+    <Compile Include="InstallFlags.cs" />
     <Compile Include="InstallForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +154,7 @@
     <EmbeddedResource Include="flash_pp_64.zip" />
     <EmbeddedResource Include="flash_gen_32.zip" />
     <EmbeddedResource Include="flash_uninstaller.zip" />
+    <EmbeddedResource Include="flash_player_32.zip" />
     <None Include="ILMerge.props" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -173,7 +175,17 @@
     <Content Include="ILMergeOrder.txt" />
     <None Include="..\CleanFlashCommon\flashLogo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>

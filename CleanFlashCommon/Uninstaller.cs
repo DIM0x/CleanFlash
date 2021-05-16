@@ -12,7 +12,7 @@ namespace CleanFlashCommon {
             "flashcenterservice", "flashcenteruninst", "flashplay", "update", "wow_helper",
             "dummy_cmd", "flashhelperservice",
             // Flash Player-related processes
-            "flashplayerapp",
+            "flashplayerapp", "flashplayer_sa", "flashplayer_sa_debug",
             // Browsers that might be using Flash Player right now
             "opera", "iexplore", "chrome", "chromium", "brave", "vivaldi", "basilisk", "msedge",
             "seamonkey", "palemoon", "plugin-container"
@@ -80,11 +80,13 @@ namespace CleanFlashCommon {
             // Remove shared start menu shortcuts
             FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu), "Programs", "Flash Center"));
             FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Programs", "Flash Center"));
-            
+            FileUtil.DeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Flash Player.lnk"));
+
             // Remove Desktop shortcut
             FileUtil.DeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory), "Flash Center.lnk"));
+            FileUtil.DeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "Flash Player.lnk"));
 
-            // Remove spyware dropped by Flash Center in the temporary folder
+            // Remove spyware dropped by Flash Center in the temporary folder   
             string tempFolder = Path.GetTempPath();
 
             foreach (string dir in Directory.GetDirectories(tempFolder)) {

@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 using Ionic.Zip;
+using IWshRuntimeLibrary;
 
 namespace CleanFlashInstaller {
     public class Installer {
@@ -32,8 +33,21 @@ namespace CleanFlashInstaller {
             }
         }
 
-        public static void Install(IProgressForm form, bool installPP, bool installNP, bool installOCX) {
-            if (!installPP && !installNP && !installOCX) {
+        public static void CreateShortcut(string folder, string executable, string name, string description) {
+            WshShell wsh = new WshShell();
+            IWshShortcut shortcut = wsh.CreateShortcut(Path.Combine(folder, name + ".lnk")) as IWshShortcut;
+
+            shortcut.Arguments = "";
+            shortcut.TargetPath = executable;
+            shortcut.WindowStyle = (int) WshWindowStyle.WshNormalFocus;
+            shortcut.Description = description;
+            shortcut.WorkingDirectory = Path.GetDirectoryName(executable);
+            shortcut.IconLocation = executable;
+            shortcut.Save();
+        }
+
+        public static void Install(IProgressForm form, InstallFlags flags) {
+            if (flags.IsNoneSet()) {
                 // No packages should be installed.
                 return;
             }
@@ -52,34 +66,50 @@ namespace CleanFlashInstaller {
             form.UpdateProgressLabel("Extracting uninstaller..", true);
             ExtractArchive("flash_uninstaller.zip", flash32Path);
 
-            if (installPP) {
+            if (flags.IsSet(InstallFlags.PEPPER)) {
                 form.UpdateProgressLabel("Installing 32-bit Flash Player for Chrome...", true);
                 ExtractArchive("flash_pp_32.zip", flash32Path);
                 registryToApply.Add(Properties.Resources.installPP);
             }
-            if (installNP) {
+            if (flags.IsSet(InstallFlags.NETSCAPE)) {
                 form.UpdateProgressLabel("Installing 32-bit Flash Player for Firefox...", true);
                 ExtractArchive("flash_np_32.zip", flash32Path);
                 registryToApply.Add(Properties.Resources.installNP);
             }
-            if (installOCX) {
+            if (flags.IsSet(InstallFlags.ACTIVEX)) {
                 form.UpdateProgressLabel("Installing 32-bit Flash Player for Internet Explorer...", true);
                 ExtractArchive("flash_ocx_32.zip", flash32Path);
                 registryToApply.Add(Properties.Resources.installOCX);
             }
+            if (flags.IsSet(InstallFlags.PLAYER)) {
+                form.UpdateProgressLabel("Installing 32-bit Standalone Flash Player...", true);
+                ExtractArchive("flash_player_32.zip", flash32Path);
+                
+                string name = "Flash Player";
+                string description = "Standalone Flash Player " + UpdateChecker.GetFlashVersion();
+                string executable = Path.Combine(flash32Path, UpdateChecker.GetFlashPlayerExecutable());
+
+                if (flags.IsSet(InstallFlags.PLAYER_START_MENU)) {
+                    CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), executable, name, description);
+                }
+
+                if (flags.IsSet(InstallFlags.PLAYER_DESKTOP)) {
+                    CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), executable, name, description);
+                }
+            }
 
             if (Environment.Is64BitOperatingSystem) {
-                if (installPP) {
+                if (flags.IsSet(InstallFlags.PEPPER)) {
                     form.UpdateProgressLabel("Installing 64-bit Flash Player for Chrome...", true);
                     ExtractArchive("flash_pp_64.zip", flash64Path);
                     registryToApply.Add(Properties.Resources.installPP64);
                 }
-                if (installNP) {
+                if (flags.IsSet(InstallFlags.NETSCAPE)) {
                     form.UpdateProgressLabel("Installing 64-bit Flash Player for Firefox...", true);
                     ExtractArchive("flash_np_64.zip", flash64Path);
                     registryToApply.Add(Properties.Resources.installNP64);
                 }
-                if (installOCX) {
+                if (flags.IsSet(InstallFlags.ACTIVEX)) {
                     form.UpdateProgressLabel("Installing 64-bit Flash Player for Internet Explorer...", true);
                     ExtractArchive("flash_ocx_64.zip", flash64Path);
                     registryToApply.Add(Properties.Resources.installOCX64);
@@ -89,7 +119,7 @@ namespace CleanFlashInstaller {
             form.UpdateProgressLabel("Applying registry changes...", true);
             RegistryManager.ApplyRegistry(registryToApply);
 
-            if (installOCX) {
+            if (flags.IsSet(InstallFlags.ACTIVEX)) {
                 form.UpdateProgressLabel("Activating 32-bit Flash Player for Internet Explorer...", true);
                 RegisterActiveX(Path.Combine(flash32Path, string.Format("Flash_{0}.ocx", SystemInfo.GetVersionPath())));
 

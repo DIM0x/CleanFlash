@@ -7,8 +7,6 @@ using System.Windows.Forms;
 
 namespace CleanFlashInstaller {
     public partial class InstallForm : Form, IProgressForm {
-        private static int UNINSTALL_TICKS = 9;
-        private static int INSTALL_GENERAL_TICKS = 2;
         private static string COMPLETE_INSTALL_TEXT = @"Clean Flash Player has been successfully installed!
 Don't forget, Flash Player is no longer compatible with new browsers. We recommend using:
    •  Older Google Chrome ≤ 87
@@ -31,6 +29,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
         private void HideAllPanels() {
             disclaimerPanel.Visible = false;
             choicePanel.Visible = false;
+            playerChoicePanel.Visible = false;
             beforeInstallPanel.Visible = false;
             installPanel.Visible = false;
             completePanel.Visible = false;
@@ -47,6 +46,13 @@ If you ever change your mind, check out Clean Flash Player's website!";
         private void OpenChoicePanel() {
             HideAllPanels();
             choicePanel.Visible = true;
+            prevButton.Text = "BACK";
+            nextButton.Text = "NEXT";
+        }
+
+        private void OpenPlayerChoicePanel() {
+            HideAllPanels();
+            playerChoicePanel.Visible = true;
             prevButton.Text = "BACK";
             nextButton.Text = "NEXT";
         }
@@ -130,24 +136,23 @@ If you ever change your mind, check out Clean Flash Player's website!";
         }
 
         private void BeginInstall() {
-            int requiredValue = (pepperBox.Checked ? 1 : 0) + (netscapeBox.Checked ? 1 : 0) + (activeXBox.Checked ? 2 : 0);
-
-            if (Environment.Is64BitOperatingSystem) {
-                requiredValue *= 2;
-            }
-
-            requiredValue += UNINSTALL_TICKS;
-            requiredValue += INSTALL_GENERAL_TICKS;
+            InstallFlags flags = new InstallFlags();
+            flags.SetConditionally(pepperBox.Checked, InstallFlags.PEPPER);
+            flags.SetConditionally(netscapeBox.Checked, InstallFlags.NETSCAPE);
+            flags.SetConditionally(activeXBox.Checked, InstallFlags.ACTIVEX);
+            flags.SetConditionally(playerBox.Checked, InstallFlags.PLAYER);
+            flags.SetConditionally(playerDesktopBox.Checked, InstallFlags.PLAYER_DESKTOP);
+            flags.SetConditionally(playerStartMenuBox.Checked, InstallFlags.PLAYER_START_MENU);
 
             progressBar.Value = 0;
-            progressBar.Maximum = requiredValue;
+            progressBar.Maximum = flags.GetTicks();
 
             new Task(new Action(() => {
                 IntPtr redirection = RedirectionManager.DisableRedirection();
 
                 try {
                     Uninstaller.Uninstall(this);
-                    Installer.Install(this, pepperBox.Checked, netscapeBox.Checked, activeXBox.Checked);
+                    Installer.Install(this, flags);
                     Complete();
                 } catch (Exception e) {
                     Failure(e);
@@ -181,6 +186,8 @@ If you ever change your mind, check out Clean Flash Player's website!";
             } else if (choicePanel.Visible) {
                 OpenDisclaimerPanel();
             } else if (beforeInstallPanel.Visible) {
+                OpenPlayerChoicePanel();
+            } else if (playerChoicePanel.Visible) {
                 OpenChoicePanel();
             }
         }
@@ -189,6 +196,8 @@ If you ever change your mind, check out Clean Flash Player's website!";
             if (disclaimerPanel.Visible) {
                 OpenChoicePanel();
             } else if (choicePanel.Visible) {
+                OpenPlayerChoicePanel();
+            } else if (playerChoicePanel.Visible) {
                 OpenBeforeInstall();
             } else if (beforeInstallPanel.Visible || failurePanel.Visible) {
                 OpenInstall();
@@ -207,8 +216,31 @@ If you ever change your mind, check out Clean Flash Player's website!";
             activeXBox.Checked = !activeXBox.Checked;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            BeginInstall();
+        private void playerLabel_Click(object sender, EventArgs e) {
+            playerBox.Checked = !playerBox.Checked;
+        }
+
+        private void playerDesktopLabel_Click(object sender, EventArgs e) {
+            if (playerBox.Checked) {
+                playerDesktopBox.Checked = !playerDesktopBox.Checked;
+            }
+        }
+
+        private void playerStartMenuLabel_Click(object sender, EventArgs e) {
+            if (playerBox.Checked) {
+                playerStartMenuBox.Checked = !playerStartMenuBox.Checked;
+            }
+        }
+        private void playerBox_CheckedChanged(object sender, EventArgs e) {
+            bool enabled = playerBox.Checked;
+
+            playerDesktopBox.Enabled = enabled;
+            playerStartMenuBox.Enabled = enabled;
+
+            if (!enabled) {
+                playerDesktopBox.Checked = false;
+                playerStartMenuBox.Checked = false;
+            }
         }
 
         public void UpdateProgressLabel(string text, bool tick) {
