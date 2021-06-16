@@ -32,8 +32,8 @@ namespace CleanFlashCommon {
     }
 
     public class UpdateChecker {
-        private static readonly string FLASH_VERSION = "34.0.0.155";
-        private static readonly string VERSION = "v34.0.0.155";
+        private static readonly string FLASH_VERSION = "34.0.0.164";
+        private static readonly string VERSION = "v34.0.0.164";
         private static readonly string FLASH_PLAYER_EXECUTABLE = "flashplayer_sa.exe";
         private static readonly string AUTHOR = "cleanflash";
         private static readonly string REPO = "installer";

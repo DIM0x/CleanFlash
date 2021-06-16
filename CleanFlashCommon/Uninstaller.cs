@@ -18,6 +18,10 @@ namespace CleanFlashCommon {
             "seamonkey", "palemoon", "plugin-container"
         };
 
+        static Uninstaller() {
+            WinAPI.AllowModifications();
+        }
+
         public static void UninstallRegistry() {
             if (Environment.Is64BitOperatingSystem) {
                 RegistryManager.ApplyRegistry(Properties.Resources.uninstallRegistry, Properties.Resources.uninstallRegistry64);

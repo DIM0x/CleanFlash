@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
-    Microsoft ResX Schema
-
+  <!-- 
+    Microsoft ResX Schema 
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -198,25 +198,7 @@
 "DisableExceptionChainValidation"=dword:00000000</value>
   </data>
   <data name="installOCX" xml:space="preserve">
-    <value>[HKEY_LOCAL_MACHINE\Software\Classes\.mfp]
-"Content Type"="application/x-shockwave-flash"
-@="MacromediaFlashPaper.MacromediaFlashPaper"
-
-[HKEY_LOCAL_MACHINE\Software\Classes\.sol]
-"Content Type"="text/plain"
-
-[HKEY_LOCAL_MACHINE\Software\Classes\.sor]
-"Content Type"="text/plain"
-
-[HKEY_LOCAL_MACHINE\Software\Classes\.spl]
-"Content Type"="application/futuresplash"
-@="ShockwaveFlash.ShockwaveFlash"
-
-[HKEY_LOCAL_MACHINE\Software\Classes\.swf]
-"Content Type"="application/x-shockwave-flash"
-@="ShockwaveFlash.ShockwaveFlash"
-
-[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer]
+    <value>[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer]
 "CurrentVersion"="${VERSION_COMMA}"
 
 [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer\SafeVersions]
@@ -260,17 +242,7 @@
 "isESR"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerActiveXReleaseType]
-"Release"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB6E-AE6D-11CF-96B8-444553540000}]
-"Compatibility Flags"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB70-AE6D-11cf-96B8-444553540000}]
-"Compatibility Flags"=dword:00010000
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\NavigatorPluginsList\Shockwave Flash]
-"application/futuresplash"=""
-"application/x-shockwave-flash"=""</value>
+"Release"=dword:00000001</value>
   </data>
   <data name="installOCX64" xml:space="preserve">
     <value>[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia\FlashPlayer]
@@ -317,17 +289,7 @@
 "isPartner"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia\FlashPlayerActiveXReleaseType]
-"Release"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB6E-AE6D-11CF-96B8-444553540000}]
-"Compatibility Flags"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\ActiveX Compatibility\{D27CDB70-AE6D-11cf-96B8-444553540000}]
-"Compatibility Flags"=dword:00010000
-
-[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\NavigatorPluginsList\Shockwave Flash]
-"application/x-shockwave-flash"=""
-"application/futuresplash"=""</value>
+"Release"=dword:00000001</value>
   </data>
   <data name="installPP" xml:space="preserve">
     <value>[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerPepper]

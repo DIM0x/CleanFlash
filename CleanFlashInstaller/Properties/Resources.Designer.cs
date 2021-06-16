@@ -146,23 +146,26 @@ namespace CleanFlashInstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Classes\.mfp]
-        ///&quot;Content Type&quot;=&quot;application/x-shockwave-flash&quot;
-        ///@=&quot;MacromediaFlashPaper.MacromediaFlashPaper&quot;
+        ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer]
+        ///&quot;CurrentVersion&quot;=&quot;${VERSION_COMMA}&quot;
         ///
-        ///[HKEY_LOCAL_MACHINE\Software\Classes\.sol]
-        ///&quot;Content Type&quot;=&quot;text/plain&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\Software\Classes\.sor]
-        ///&quot;Content Type&quot;=&quot;text/plain&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\Software\Classes\.spl]
-        ///&quot;Content Type&quot;=&quot;application/futuresplash&quot;
-        ///@=&quot;ShockwaveFlash.ShockwaveFlash&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\Software\Classes\.swf]
-        ///&quot;Content Type&quot;=&quot;application/x-shockwave-flash&quot;
-        ///@=&quot;Sh [rest of string was truncated]&quot;;.
+        ///[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer\SafeVersions]
+        ///&quot;20.0&quot;=dword:ffffffff
+        ///&quot;21.0&quot;=dword:ffffffff
+        ///&quot;22.0&quot;=dword:ffffffff
+        ///&quot;23.0&quot;=dword:ffffffff
+        ///&quot;24.0&quot;=dword:ffffffff
+        ///&quot;25.0&quot;=dword:ffffffff
+        ///&quot;26.0&quot;=dword:ffffffff
+        ///&quot;27.0&quot;=dword:ffffffff
+        ///&quot;28.0&quot;=dword:ffffffff
+        ///&quot;19.0&quot;=dword:ffffffff
+        ///&quot;30.0&quot;=dword:ffffffff
+        ///&quot;31.0&quot;=dword:ffffffff
+        ///&quot;32.0&quot;=dword:ffffffff
+        ///&quot;33.0&quot;=dword:ffffffff
+        ///&quot;34.0&quot;=dword:00000089
+        ///&quot;16.0&quot;= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string installOCX {
             get {
