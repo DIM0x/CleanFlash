@@ -104,7 +104,7 @@ namespace CleanFlashInstaller.Properties {
         ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerPlugin]
         ///&quot;isPartner&quot;=dword:00000001
         ///&quot;Version&quot;=&quot;${VERSION}&quot;
-        ///&quot;PlayerPath&quot;=&quot;${FLASH_64_PATH}\\NPSWF_${VERSION_PATH}.dll&quot;
+        ///&quot;PlayerPath&quot;=&quot;${FLASH_64_PATH}\\NPSWF${ARCH}_${VERSION_PATH}.dll&quot;
         ///&quot;UninstallerPath&quot;=-
         ///&quot;isScriptDebugger&quot;=dword:00000000
         ///&quot;isESR&quot;=dword:00000000
@@ -115,7 +115,7 @@ namespace CleanFlashInstaller.Properties {
         ///
         ///[HKEY_LOCAL_MACHINE\Software\MozillaPlugins\@adobe.com/FlashPlayer]
         ///&quot;Vendor&quot;=&quot;Adobe&quot;
-        ///&quot;ProductName&quot;=&quot;Adobe® Flash® Player ${VERSION} P [rest of string was truncated]&quot;;.
+        ///&quot;ProductName&quot;=&quot;Adobe® Flash® Player ${VER [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string installNP {
             get {
@@ -203,7 +203,7 @@ namespace CleanFlashInstaller.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerPepper]
         ///&quot;UninstallerPath&quot;=-
-        ///&quot;PlayerPath&quot;=&quot;${FLASH_64_PATH}\\pepflashplayer_${VERSION_PATH}.dll&quot;
+        ///&quot;PlayerPath&quot;=&quot;${FLASH_64_PATH}\\pepflashplayer${ARCH}_${VERSION_PATH}.dll&quot;
         ///&quot;isScriptDebugger&quot;=dword:00000000
         ///&quot;isESR&quot;=dword:00000000
         ///&quot;isMSI&quot;=dword:00000000
@@ -222,7 +222,7 @@ namespace CleanFlashInstaller.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia\FlashPlayerPepper]
         ///&quot;UninstallerPath&quot;=-
-        ///&quot;PlayerPath&quot;=&quot;${FLASH_32_PATH}\\pepflashplayer_${VERSION_PATH}.dll&quot;
+        ///&quot;PlayerPath&quot;=&quot;${FLASH_32_PATH}\\pepflashplayer32_${VERSION_PATH}.dll&quot;
         ///&quot;isScriptDebugger&quot;=dword:00000000
         ///&quot;isESR&quot;=dword:00000000
         ///&quot;isMSI&quot;=dword:00000000

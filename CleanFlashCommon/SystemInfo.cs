@@ -21,7 +21,8 @@ namespace CleanFlashCommon {
             { "${FLASH_64_PATH}", flash64Path.Replace(@"\", @"\\") },
             { "${VERSION}", version },
             { "${VERSION_PATH}", versionPath },
-            { "${VERSION_COMMA}", versionComma }
+            { "${VERSION_COMMA}", versionComma },
+            { "${ARCH}", Environment.Is64BitOperatingSystem ? "64" : "32" }
         };
 
         public static string GetSystem32Path() {

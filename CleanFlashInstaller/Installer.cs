@@ -121,11 +121,11 @@ namespace CleanFlashInstaller {
 
             if (flags.IsSet(InstallFlags.ACTIVEX)) {
                 form.UpdateProgressLabel("Activating 32-bit Flash Player for Internet Explorer...", true);
-                RegisterActiveX(Path.Combine(flash32Path, string.Format("Flash_{0}.ocx", SystemInfo.GetVersionPath())));
+                RegisterActiveX(Path.Combine(flash32Path, string.Format("Flash32_{0}.ocx", SystemInfo.GetVersionPath())));
 
                 if (Environment.Is64BitOperatingSystem) {
                     form.UpdateProgressLabel("Activating 64-bit Flash Player for Internet Explorer...", true);
-                    RegisterActiveX(Path.Combine(flash64Path, string.Format("Flash_{0}.ocx", SystemInfo.GetVersionPath())));
+                    RegisterActiveX(Path.Combine(flash64Path, string.Format("Flash64_{0}.ocx", SystemInfo.GetVersionPath())));
                 }
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace CleanFlashCommon {
     public class RegistryManager {
@@ -9,7 +10,7 @@ namespace CleanFlashCommon {
             registryContents = "Windows Registry Editor Version 5.00\n\n" + SystemInfo.FillString(registryContents);
             string filename = Path.GetTempFileName();
 
-            File.WriteAllText(filename, registryContents);
+            File.WriteAllText(filename, registryContents, Encoding.Unicode);
 
             Directory.SetCurrentDirectory(Path.GetDirectoryName(filename));
 

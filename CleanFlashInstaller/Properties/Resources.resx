@@ -154,7 +154,7 @@
     <value>[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerPlugin]
 "isPartner"=dword:00000001
 "Version"="${VERSION}"
-"PlayerPath"="${FLASH_64_PATH}\\NPSWF_${VERSION_PATH}.dll"
+"PlayerPath"="${FLASH_64_PATH}\\NPSWF${ARCH}_${VERSION_PATH}.dll"
 "UninstallerPath"=-
 "isScriptDebugger"=dword:00000000
 "isESR"=dword:00000000
@@ -166,7 +166,7 @@
 [HKEY_LOCAL_MACHINE\Software\MozillaPlugins\@adobe.com/FlashPlayer]
 "Vendor"="Adobe"
 "ProductName"="Adobe® Flash® Player ${VERSION} Plugin"
-"Path"="${FLASH_64_PATH}\\NPSWF_${VERSION_PATH}.dll"
+"Path"="${FLASH_64_PATH}\\NPSWF${ARCH}_${VERSION_PATH}.dll"
 "Version"="${VERSION}"
 "Description"="Adobe® Flash® Player ${VERSION} Plugin"
 
@@ -192,7 +192,7 @@
 "Version"="${VERSION}"
 "XPTPath"="${FLASH_32_PATH}\\flashplayer.xpt"
 "Vendor"="Adobe"
-"Path"="${FLASH_32_PATH}\\NPSWF_${VERSION_PATH}.dll"
+"Path"="${FLASH_32_PATH}\\NPSWF32_${VERSION_PATH}.dll"
 
 [HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FlashPlayerPlugin_${VERSION_PATH}.exe]
 "DisableExceptionChainValidation"=dword:00000000</value>
@@ -234,7 +234,7 @@
 
 [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerActiveX]
 "Version"="${VERSION}"
-"PlayerPath"="${FLASH_64_PATH}\\Flash_${VERSION_PATH}.ocx"
+"PlayerPath"="${FLASH_64_PATH}\\Flash${ARCH}_${VERSION_PATH}.ocx"
 "UninstallerPath"=-
 "isScriptDebugger"=dword:00000000
 "isMSI"=dword:00000000
@@ -284,7 +284,7 @@
 "isESR"=dword:00000000
 "isScriptDebugger"=dword:00000000
 "UninstallerPath"=-
-"PlayerPath"="${FLASH_32_PATH}\\Flash_${VERSION_PATH}.ocx"
+"PlayerPath"="${FLASH_32_PATH}\\Flash32_${VERSION_PATH}.ocx"
 "Version"="${VERSION}"
 "isPartner"=dword:00000001
 
@@ -294,7 +294,7 @@
   <data name="installPP" xml:space="preserve">
     <value>[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerPepper]
 "UninstallerPath"=-
-"PlayerPath"="${FLASH_64_PATH}\\pepflashplayer_${VERSION_PATH}.dll"
+"PlayerPath"="${FLASH_64_PATH}\\pepflashplayer${ARCH}_${VERSION_PATH}.dll"
 "isScriptDebugger"=dword:00000000
 "isESR"=dword:00000000
 "isMSI"=dword:00000000
@@ -307,7 +307,7 @@
   <data name="installPP64" xml:space="preserve">
     <value>[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia\FlashPlayerPepper]
 "UninstallerPath"=-
-"PlayerPath"="${FLASH_32_PATH}\\pepflashplayer_${VERSION_PATH}.dll"
+"PlayerPath"="${FLASH_32_PATH}\\pepflashplayer32_${VERSION_PATH}.dll"
 "isScriptDebugger"=dword:00000000
 "isESR"=dword:00000000
 "isMSI"=dword:00000000
