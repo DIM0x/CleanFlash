@@ -21,12 +21,12 @@ namespace CleanFlashCommon {
         }
 
         public static void RecursiveDelete(DirectoryInfo rootDir, DirectoryInfo baseDir, string filename) {
-            if (!baseDir.Exists) {
+            if (!baseDir.FullName.StartsWith(rootDir.FullName)) {
+                // Sanity check.
                 return;
             }
 
-            if (!baseDir.FullName.StartsWith(rootDir.FullName)) {
-                // Sanity check.
+            if (!baseDir.Exists) {
                 return;
             }
 
@@ -42,15 +42,6 @@ namespace CleanFlashCommon {
 
                 if (filename == null || file.Name.Equals(filename)) {
                     DeleteFile(file);
-                }
-            }
-
-            if (!Directory.EnumerateFileSystemEntries(baseDir.FullName).Any()) {
-                try {
-                    baseDir.Delete();
-                } catch {
-                    HandleUtil.KillProcessesUsingFile(baseDir.FullName);
-                    baseDir.Delete();
                 }
             }
         }
@@ -77,6 +68,7 @@ namespace CleanFlashCommon {
                 }
 
                 HandleUtil.KillProcessesUsingFile(file.FullName);
+                Thread.Sleep(500);
                 file.Delete();
             }
         }
@@ -93,6 +85,31 @@ namespace CleanFlashCommon {
         public static void RecursiveDelete(string baseDir) {
             DirectoryInfo dirInfo = new DirectoryInfo(baseDir);
             RecursiveDelete(dirInfo, dirInfo, null);
+        }
+
+        public static void WipeFolder(string baseDir) {
+            DirectoryInfo dirInfo = new DirectoryInfo(baseDir);
+
+            if (!dirInfo.Exists) {
+                return;
+            }
+
+            RecursiveDelete(dirInfo);
+
+            if (!Directory.EnumerateFileSystemEntries(dirInfo.FullName).Any()) {
+                try {
+                    dirInfo.Delete();
+                } catch {
+                    HandleUtil.KillProcessesUsingFile(dirInfo.FullName);
+                    Thread.Sleep(500);
+
+                    try {
+                        dirInfo.Delete();
+                    } catch {
+                        // We've tried for long enough...
+                    }
+                }
+            }
         }
 
         public static void DeleteFile(string file) {

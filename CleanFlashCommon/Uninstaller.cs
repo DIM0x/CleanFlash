@@ -68,22 +68,22 @@ namespace CleanFlashCommon {
 
         public static void DeleteFlashCenter() {
             // Remove Flash Center from Program Files
-            FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "FlashCenter"));
+            FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "FlashCenter"));
 
             if (Environment.Is64BitOperatingSystem) {
                 // Remove Flash Center from Program Files (x86)
-                FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "FlashCenter"));
+                FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "FlashCenter"));
             }
 
             // Remove start menu shortcuts
-            FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Microsoft", "Windows", "Start Menu", "Programs", "Flash Center"));
+            FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Microsoft", "Windows", "Start Menu", "Programs", "Flash Center"));
 
             // Remove Flash Center cache and user data
-            FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Flash_Center"));
+            FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Flash_Center"));
             
             // Remove shared start menu shortcuts
-            FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu), "Programs", "Flash Center"));
-            FileUtil.RecursiveDelete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Programs", "Flash Center"));
+            FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu), "Programs", "Flash Center"));
+            FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Programs", "Flash Center"));
             FileUtil.DeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Flash Player.lnk"));
 
             // Remove Desktop shortcut
@@ -97,7 +97,7 @@ namespace CleanFlashCommon {
                 string parentName = Path.GetFileName(dir);
 
                 if (parentName.Length == 11 && parentName.EndsWith(".tmp")) {
-                    FileUtil.RecursiveDelete(dir);
+                    FileUtil.WipeFolder(dir);
                 }
             }
 
