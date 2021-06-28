@@ -79,7 +79,6 @@ namespace CleanFlashInstaller {
             if (flags.IsSet(InstallFlags.ACTIVEX)) {
                 form.UpdateProgressLabel("Installing 32-bit Flash Player for Internet Explorer...", true);
                 ExtractArchive("flash_ocx_32.zip", flash32Path);
-                registryToApply.Add(Properties.Resources.installOCX);
             }
             if (flags.IsSet(InstallFlags.PLAYER)) {
                 form.UpdateProgressLabel("Installing 32-bit Standalone Flash Player...", true);
@@ -112,7 +111,6 @@ namespace CleanFlashInstaller {
                 if (flags.IsSet(InstallFlags.ACTIVEX)) {
                     form.UpdateProgressLabel("Installing 64-bit Flash Player for Internet Explorer...", true);
                     ExtractArchive("flash_ocx_64.zip", flash64Path);
-                    registryToApply.Add(Properties.Resources.installOCX64);
                 }
             }
 

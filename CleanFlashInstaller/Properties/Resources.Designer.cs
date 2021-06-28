@@ -146,61 +146,6 @@ namespace CleanFlashInstaller.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer]
-        ///&quot;CurrentVersion&quot;=&quot;${VERSION_COMMA}&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayer\SafeVersions]
-        ///&quot;20.0&quot;=dword:ffffffff
-        ///&quot;21.0&quot;=dword:ffffffff
-        ///&quot;22.0&quot;=dword:ffffffff
-        ///&quot;23.0&quot;=dword:ffffffff
-        ///&quot;24.0&quot;=dword:ffffffff
-        ///&quot;25.0&quot;=dword:ffffffff
-        ///&quot;26.0&quot;=dword:ffffffff
-        ///&quot;27.0&quot;=dword:ffffffff
-        ///&quot;28.0&quot;=dword:ffffffff
-        ///&quot;19.0&quot;=dword:ffffffff
-        ///&quot;30.0&quot;=dword:ffffffff
-        ///&quot;31.0&quot;=dword:ffffffff
-        ///&quot;32.0&quot;=dword:ffffffff
-        ///&quot;33.0&quot;=dword:ffffffff
-        ///&quot;34.0&quot;=dword:00000089
-        ///&quot;16.0&quot;= [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string installOCX {
-            get {
-                return ResourceManager.GetString("installOCX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia\FlashPlayer]
-        ///&quot;CurrentVersion&quot;=&quot;${VERSION_COMMA}&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\Software\Wow6432Node\Macromedia\FlashPlayer\SafeVersions]
-        ///&quot;28.0&quot;=dword:ffffffff
-        ///&quot;27.0&quot;=dword:ffffffff
-        ///&quot;26.0&quot;=dword:ffffffff
-        ///&quot;21.0&quot;=dword:ffffffff
-        ///&quot;24.0&quot;=dword:ffffffff
-        ///&quot;7.0&quot;=dword:ffffffff
-        ///&quot;6.0&quot;=dword:ffffffff
-        ///&quot;30.0&quot;=dword:ffffffff
-        ///&quot;29.0&quot;=dword:ffffffff
-        ///&quot;31.0&quot;=dword:ffffffff
-        ///&quot;32.0&quot;=dword:ffffffff
-        ///&quot;8.0&quot;=dword:ffffffff
-        ///&quot;11.0&quot;=dword:ffffffff
-        ///&quot;10.0&quot;=dword:ffffffff
-        ///&quot;13.0&quot;=dw [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string installOCX64 {
-            get {
-                return ResourceManager.GetString("installOCX64", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [HKEY_LOCAL_MACHINE\Software\Macromedia\FlashPlayerPepper]
         ///&quot;UninstallerPath&quot;=-
         ///&quot;PlayerPath&quot;=&quot;${FLASH_64_PATH}\\pepflashplayer${ARCH}_${VERSION_PATH}.dll&quot;

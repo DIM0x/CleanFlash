@@ -72,7 +72,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
             HideAllPanels();
             string text;
 
-            if (pepperBox.Checked || netscapeBox.Checked || activeXBox.Checked) {
+            if (pepperBox.Checked || netscapeBox.Checked || activeXBox.Checked || playerBox.Checked) {
                 List<string> browsers = new List<string>();
 
                 if (pepperBox.Checked) {
