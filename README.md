@@ -2,7 +2,7 @@
 
 [![Patreon](https://img.shields.io/badge/Kofi-donate-purple.svg)](https://ko-fi.com/disyer) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/darktohka/FlashPatch/blob/master/LICENSE)
 
-![Image of Clean Flash Player](https://i.imgur.com/1JID6nk.png)
+![Image of Clean Flash Player](https://i.imgur.com/XbhQ3ZF.png)
 
 [Download latest version](https://github.com/CleanFlash/installer/releases/latest)
 
@@ -16,7 +16,7 @@ Clean Flash Player uses a modified version of this updated Flash Player version,
 
 Google Chrome, Mozilla Firefox and Internet Explorer browser plugins are supported. Clean Flash Player ships with a standalone Flash Projector as well.
 
-**Clean Flash is compatible and tested with Windows XP, Windows Vista, Windows 7, Windows 8.1 and Windows 10**. If attempting to run on Windows XP, download [.NET Framework 4.0](https://dotnet.microsoft.com/download/dotnet-framework/net40) first and optionally update to [.NET Framework 4.0.3](https://www.microsoft.com/en-us/download/details.aspx?id=29053).
+**Clean Flash is compatible and tested with Windows XP, Windows Vista, Windows 7, Windows 8.1, Windows 10 and Windows 11**. If attempting to run on Windows XP, download [.NET Framework 4.0](https://dotnet.microsoft.com/download/dotnet-framework/net40) first and optionally update to [.NET Framework 4.0.3](https://www.microsoft.com/en-us/download/details.aspx?id=29053).
 
 ## Browser compatibility
 
@@ -24,7 +24,7 @@ Newer versions of Google Chrome and Mozilla Firefox do not support Flash Player 
 
 To keep using Flash Player on **Google Chrome**, install an older version of Chrome. The last supported version is Chrome 87.0.4280.168.
 
-To keep using Flash Player on **Mozilla Firefox**, install [**Basilisk Browser**](https://basilisk-browser.org) or [**Waterfox**](https://waterfox.net). Both of them are forks of Mozilla Firefox with built-in Flash Player support.
+To keep using Flash Player on **Mozilla Firefox**, install [**Waterfox**](https://waterfox.net) or [**Basilisk Browser**](https://basilisk-browser.org). Both of them are forks of Mozilla Firefox with built-in Flash Player support.
 
 **Internet Explorer** still supports Flash Player on Windows.
 
