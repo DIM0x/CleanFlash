@@ -7,6 +7,8 @@ namespace CleanFlashCommon {
 
         private static string system32Path = Environment.GetFolderPath(Environment.SpecialFolder.SystemX86);
         private static string system64Path = Environment.GetFolderPath(Environment.SpecialFolder.System);
+        private static string program32Path = Environment.GetEnvironmentVariable("PROGRAMFILES(X86)") ?? Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+        private static string flashProgram32Path = Path.Combine(program32Path, "Flash Player");
         private static string macromed32Path = Path.Combine(system32Path, "Macromed");
         private static string macromed64Path = Path.Combine(system64Path, "Macromed");
         private static string flash32Path = Path.Combine(macromed32Path, "Flash");
@@ -17,6 +19,8 @@ namespace CleanFlashCommon {
         private static Dictionary<string, string> replacementStrings = new Dictionary<string, string>() {
             { "${SYSTEM_32_PATH}", system32Path.Replace(@"\", @"\\") },
             { "${SYSTEM_64_PATH}", system64Path.Replace(@"\", @"\\") },
+            { "${PROGRAM_32_PATH}", program32Path.Replace(@"\", @"\\") },
+            { "${PROGRAM_FLASH_32_PATH}", flashProgram32Path.Replace(@"\", @"\\") },
             { "${FLASH_32_PATH}", flash32Path.Replace(@"\", @"\\") },
             { "${FLASH_64_PATH}", flash64Path.Replace(@"\", @"\\") },
             { "${VERSION}", version },
@@ -32,6 +36,17 @@ namespace CleanFlashCommon {
         public static string GetSystem64Path() {
             return system64Path;
         }
+
+        public static string GetProgram32Path()
+        {
+            return program32Path;
+        }
+
+        public static string GetProgramFlash32Path()
+        {
+            return flashProgram32Path;
+        }
+
         public static string[] GetSystemPaths() {
             if (Environment.Is64BitOperatingSystem) {
                 return new string[] { system32Path, system64Path };

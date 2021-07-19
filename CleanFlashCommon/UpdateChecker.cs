@@ -32,12 +32,13 @@ namespace CleanFlashCommon {
     }
 
     public class UpdateChecker {
-        private static readonly string FLASH_VERSION = "34.0.0.164";
-        private static readonly string VERSION = "v34.0.0.164";
+        private static readonly string FLASH_VERSION = "34.0.0.175";
+        private static readonly string VERSION = "v34.0.0.175";
         private static readonly string FLASH_PLAYER_EXECUTABLE = "flashplayer_sa.exe";
         private static readonly string AUTHOR = "cleanflash";
         private static readonly string REPO = "installer";
-        private static readonly string USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36";
+        private static readonly string USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36";
+        private static readonly bool DEBUG = false;
 
         public static string GetAPILink() {
             return "https://api.github.com/repos/" + AUTHOR + "/" + REPO + "/releases/latest";
@@ -53,6 +54,11 @@ namespace CleanFlashCommon {
 
         public static string GetFlashPlayerExecutable() {
             return FLASH_PLAYER_EXECUTABLE;
+        }
+
+        public static bool IsDebug()
+        {
+            return DEBUG;
         }
 
         private static Version GetLatestVersionUnsafe() {

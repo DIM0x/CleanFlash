@@ -90,6 +90,9 @@ namespace CleanFlashCommon {
             FileUtil.DeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory), "Flash Center.lnk"));
             FileUtil.DeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "Flash Player.lnk"));
 
+            // Remove Flash Player from Program Files
+            FileUtil.WipeFolder(SystemInfo.GetProgramFlash32Path());
+
             // Remove spyware dropped by Flash Center in the temporary folder   
             string tempFolder = Path.GetTempPath();
 

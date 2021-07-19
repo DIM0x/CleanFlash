@@ -139,8 +139,8 @@
 "VersionMinor"=dword:00000000
 "Publisher"="CleanFlash Team"
 "EstimatedSize"=dword:00011cb8
-"DisplayIcon"="${FLASH_32_PATH}\\FlashUtil_Uninstall.exe"
-"UninstallString"="${FLASH_32_PATH}\\FlashUtil_Uninstall.exe"
+"DisplayIcon"="${PROGRAM_FLASH_32_PATH}\\FlashUtil_Uninstall.exe"
+"UninstallString"="${PROGRAM_FLASH_32_PATH}\\FlashUtil_Uninstall.exe"
 "DisplayVersion"="${VERSION}"</value>
   </data>
   <data name="installGeneral64" xml:space="preserve">

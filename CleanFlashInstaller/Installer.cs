@@ -55,6 +55,7 @@ namespace CleanFlashInstaller {
             string flash32Path = SystemInfo.GetFlash32Path();
             string flash64Path = SystemInfo.GetFlash64Path();
             string system32Path = SystemInfo.GetSystem32Path();
+            string flashProgram32Path = SystemInfo.GetProgramFlash32Path();
             List<string> registryToApply = new List<string>() { Properties.Resources.installGeneral };
 
             if (Environment.Is64BitOperatingSystem) {
@@ -64,7 +65,7 @@ namespace CleanFlashInstaller {
             form.UpdateProgressLabel("Installing Flash Player utilities...", true);
             ExtractArchive("flash_gen_32.zip", system32Path);
             form.UpdateProgressLabel("Extracting uninstaller..", true);
-            ExtractArchive("flash_uninstaller.zip", flash32Path);
+            ExtractArchive("flash_uninstaller.zip", flashProgram32Path);
 
             if (flags.IsSet(InstallFlags.PEPPER)) {
                 form.UpdateProgressLabel("Installing 32-bit Flash Player for Chrome...", true);
@@ -82,11 +83,11 @@ namespace CleanFlashInstaller {
             }
             if (flags.IsSet(InstallFlags.PLAYER)) {
                 form.UpdateProgressLabel("Installing 32-bit Standalone Flash Player...", true);
-                ExtractArchive("flash_player_32.zip", flash32Path);
+                ExtractArchive("flash_player_32.zip", flashProgram32Path);
                 
                 string name = "Flash Player";
                 string description = "Standalone Flash Player " + UpdateChecker.GetFlashVersion();
-                string executable = Path.Combine(flash32Path, UpdateChecker.GetFlashPlayerExecutable());
+                string executable = Path.Combine(flashProgram32Path, UpdateChecker.GetFlashPlayerExecutable());
 
                 if (flags.IsSet(InstallFlags.PLAYER_START_MENU)) {
                     CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), executable, name, description);

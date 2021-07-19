@@ -173,7 +173,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
         private void InstallForm_Load(object sender, EventArgs e) {
             string version = UpdateChecker.GetFlashVersion();
 
-            subtitleLabel.Text = string.Format("built from version {0} (China)", version);
+            subtitleLabel.Text = string.Format("built from version {0} ({1})", version, UpdateChecker.IsDebug() ? "DEBUG" : "China");
             Text = string.Format("Clean Flash Player {0} Installer", version);
 
             OpenDisclaimerPanel();
