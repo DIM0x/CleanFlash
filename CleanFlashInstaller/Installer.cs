@@ -84,10 +84,15 @@ namespace CleanFlashInstaller {
             if (flags.IsSet(InstallFlags.PLAYER)) {
                 form.UpdateProgressLabel("Installing 32-bit Standalone Flash Player...", true);
                 ExtractArchive("flash_player_32.zip", flashProgram32Path);
-                
+
                 string name = "Flash Player";
                 string description = "Standalone Flash Player " + UpdateChecker.GetFlashVersion();
                 string executable = Path.Combine(flashProgram32Path, UpdateChecker.GetFlashPlayerExecutable());
+
+                if (UpdateChecker.IsDebug()) {
+                    name += " (Debug)";
+                    description += " (Debug)";
+                }
 
                 if (flags.IsSet(InstallFlags.PLAYER_START_MENU)) {
                     CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), executable, name, description);
