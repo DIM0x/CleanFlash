@@ -15,7 +15,7 @@ namespace CleanFlashCommon {
             "flashplayerapp", "flashplayer_sa", "flashplayer_sa_debug",
             // Browsers that might be using Flash Player right now
             "opera", "iexplore", "chrome", "chromium", "brave", "vivaldi", "basilisk", "msedge",
-            "seamonkey", "palemoon", "k-meleon", "plugin-container"
+            "seamonkey", "palemoon", "k-meleon", "plugin-container", "waterfox"
         };
 
         static Uninstaller() {

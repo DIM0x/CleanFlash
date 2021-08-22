@@ -10,13 +10,14 @@ namespace CleanFlashInstaller {
         private static string COMPLETE_INSTALL_TEXT = @"Clean Flash Player has been successfully installed!
 Don't forget, Flash Player is no longer compatible with new browsers. We recommend using:
    •  Older Google Chrome ≤ 87
-   •  Older Mozilla Firefox ≤ 84 or Basilisk Browser
+   •  Older Mozilla Firefox ≤ 84 or Waterfox
 
 For Flash Player updates, check out Clean Flash Player's website!";
         private static string COMPLETE_UNINSTALL_TEXT = @"
 All versions of Flash Player have been successfully uninstalled.
 
 If you ever change your mind, check out Clean Flash Player's website!";
+        private bool debugChosen = false;
 
         public InstallForm() {
             InitializeComponent();
@@ -30,6 +31,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
             disclaimerPanel.Visible = false;
             choicePanel.Visible = false;
             playerChoicePanel.Visible = false;
+            debugChoicePanel.Visible = false;
             beforeInstallPanel.Visible = false;
             installPanel.Visible = false;
             completePanel.Visible = false;
@@ -53,6 +55,14 @@ If you ever change your mind, check out Clean Flash Player's website!";
         private void OpenPlayerChoicePanel() {
             HideAllPanels();
             playerChoicePanel.Visible = true;
+            prevButton.Text = "BACK";
+            nextButton.Text = "NEXT";
+        }
+
+        private void OpenDebugChoicePanel() {
+            HideAllPanels();
+            debugChoicePanel.Visible = true;
+            debugChosen = false;
             prevButton.Text = "BACK";
             nextButton.Text = "NEXT";
         }
@@ -117,8 +127,8 @@ If you ever change your mind, check out Clean Flash Player's website!";
 
             if (pepperBox.Checked || netscapeBox.Checked || activeXBox.Checked) {
                 completeLabel.Text = COMPLETE_INSTALL_TEXT;
-                completeLabel.Links.Add(new LinkLabel.Link(212, 16));
-                completeLabel.Links.Add(new LinkLabel.Link(268, 28));
+                completeLabel.Links.Add(new LinkLabel.Link(212, 8));
+                completeLabel.Links.Add(new LinkLabel.Link(260, 28));
             } else {
                 completeLabel.Text = COMPLETE_UNINSTALL_TEXT;
                 completeLabel.Links.Add(new LinkLabel.Link(110, 28));
@@ -143,6 +153,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
             flags.SetConditionally(playerBox.Checked, InstallFlags.PLAYER);
             flags.SetConditionally(playerDesktopBox.Checked, InstallFlags.PLAYER_DESKTOP);
             flags.SetConditionally(playerStartMenuBox.Checked, InstallFlags.PLAYER_START_MENU);
+            flags.SetConditionally(debugChosen, InstallFlags.DEBUG);
 
             progressBar.Value = 0;
             progressBar.Maximum = flags.GetTicks();
@@ -173,7 +184,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
         private void InstallForm_Load(object sender, EventArgs e) {
             string version = UpdateChecker.GetFlashVersion();
 
-            subtitleLabel.Text = string.Format("built from version {0} ({1})", version, UpdateChecker.IsDebug() ? "DEBUG" : "China");
+            subtitleLabel.Text = string.Format("built from version {0} ({1})", version, "China");
             Text = string.Format("Clean Flash Player {0} Installer", version);
 
             OpenDisclaimerPanel();
@@ -186,9 +197,11 @@ If you ever change your mind, check out Clean Flash Player's website!";
             } else if (choicePanel.Visible) {
                 OpenDisclaimerPanel();
             } else if (beforeInstallPanel.Visible) {
-                OpenPlayerChoicePanel();
+                OpenDebugChoicePanel();
             } else if (playerChoicePanel.Visible) {
                 OpenChoicePanel();
+            } else if (debugChoicePanel.Visible) {
+                OpenPlayerChoicePanel();
             }
         }
 
@@ -198,6 +211,8 @@ If you ever change your mind, check out Clean Flash Player's website!";
             } else if (choicePanel.Visible) {
                 OpenPlayerChoicePanel();
             } else if (playerChoicePanel.Visible) {
+                OpenDebugChoicePanel();
+            } else if (debugChoicePanel.Visible) {
                 OpenBeforeInstall();
             } else if (beforeInstallPanel.Visible || failurePanel.Visible) {
                 OpenInstall();
@@ -269,7 +284,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
 
         private void completeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             if (e.Link.Start == 212) {
-                Process.Start("https://www.basilisk-browser.org");
+                Process.Start("https://waterfox.net");
             } else {
                 Process.Start("https://cleanflash.github.io");
             }
@@ -278,6 +293,11 @@ If you ever change your mind, check out Clean Flash Player's website!";
         private void copyErrorButton_Click(object sender, EventArgs e) {
             Clipboard.SetText(failureBox.Text);
             MessageBox.Show("Copied error message to clipboard!", "Clean Flash Installer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void debugButton_Click(object sender, EventArgs e) {
+            debugChosen = MessageBox.Show("Are you sure you want to install the debug version?\n\nThis version is only meant to be used by experienced developers!\nIf you are not sure, choose No.", "Clean Flash Installer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+            OpenBeforeInstall();
         }
     }
 }

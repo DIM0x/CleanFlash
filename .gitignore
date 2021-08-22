@@ -10,4 +10,5 @@ obj
 *.user
 *.suo
 
-flash_*.zip
+*.zip
+*.7z

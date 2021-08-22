@@ -83,6 +83,12 @@ namespace CleanFlashCommon {
             return versionPath;
         }
 
+        public static bool IsLegacyWindows() {
+            System.Version version = Environment.OSVersion.Version;
+
+            return version.Major <= 6 && (version.Major != 6 || version.Minor < 2);
+        }
+
         public static Dictionary<string, string> GetReplacementStrings() {
             return replacementStrings;
         }

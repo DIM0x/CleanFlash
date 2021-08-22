@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
-using Ionic.Zip;
+using SharpCompress.Archives.SevenZip;
+using SharpCompress.Common;
+using SharpCompress.Readers;
 using IWshRuntimeLibrary;
 
 namespace CleanFlashInstaller {
@@ -25,11 +27,50 @@ namespace CleanFlashInstaller {
             }
         }
 
-        public static void ExtractArchive(string archiveName, string targetDirectory) {
-            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("CleanFlashInstaller." + archiveName)) {
-                using (ZipFile archive = ZipFile.Read(stream)) {
-                    archive.ExtractAll(targetDirectory, ExtractExistingFileAction.OverwriteSilently);
+        public static void ExtractArchive(SevenZipArchive archive, Dictionary<string, InstallEntry> entries, IProgressForm form, InstallFlags flags) {
+            IReader reader = archive.ExtractAllEntries();
+            bool legacy = SystemInfo.IsLegacyWindows();
+            string lastKey = null;
+
+            while (reader.MoveToNextEntry()) {
+                if (reader.Entry.IsDirectory) {
+                    continue;
                 }
+
+                string filename = reader.Entry.Key.Split('/')[0];
+                string installKey = filename.Split('-')[0];
+                InstallEntry installEntry = entries[installKey];
+
+                if (installEntry.RequiredFlags.GetValue() != InstallFlags.NONE) {
+                    if (!flags.IsSet(installEntry.RequiredFlags)) {
+                        continue;
+                    }
+
+                    if (flags.IsSet(InstallFlags.DEBUG) != filename.Contains("-debug")) {
+                        continue;
+                    }
+                }
+
+                if (installEntry.RequiredFlags.IsSet(InstallFlags.ACTIVEX)) {
+                    if (legacy != filename.Contains("-legacy")) {
+                        continue;
+                    }
+                }
+
+                if (!installKey.Equals(lastKey)) {
+                    form.UpdateProgressLabel(installEntry.InstallText, true);
+
+                    if (!Directory.Exists(installEntry.TargetDirectory)) {
+                        Directory.CreateDirectory(installEntry.TargetDirectory);
+                    }
+
+                    lastKey = installKey;
+                }
+
+                reader.WriteEntryToDirectory(installEntry.TargetDirectory, new ExtractionOptions() {
+                    ExtractFullPath = false,
+                    Overwrite = true
+                });
             }
         }
 
@@ -46,12 +87,7 @@ namespace CleanFlashInstaller {
             shortcut.Save();
         }
 
-        public static void Install(IProgressForm form, InstallFlags flags) {
-            if (flags.IsNoneSet()) {
-                // No packages should be installed.
-                return;
-            }
-
+        private static void InstallFromArchive(SevenZipArchive archive, IProgressForm form, InstallFlags flags) {
             string flash32Path = SystemInfo.GetFlash32Path();
             string flash64Path = SystemInfo.GetFlash64Path();
             string system32Path = SystemInfo.GetSystem32Path();
@@ -59,37 +95,31 @@ namespace CleanFlashInstaller {
             List<string> registryToApply = new List<string>() { Properties.Resources.installGeneral };
 
             if (Environment.Is64BitOperatingSystem) {
+                flags.SetFlag(InstallFlags.X64);
                 registryToApply.Add(Properties.Resources.installGeneral64);
             }
 
-            form.UpdateProgressLabel("Installing Flash Player utilities...", true);
-            ExtractArchive("flash_gen_32.zip", system32Path);
-            form.UpdateProgressLabel("Extracting uninstaller..", true);
-            ExtractArchive("flash_uninstaller.zip", flashProgram32Path);
+            Dictionary<string, InstallEntry> entries = new Dictionary<string, InstallEntry>() {
+                { "controlpanel", new InstallEntry("Installing Flash Player utilities...", InstallFlags.NONE, system32Path) },
+                { "uninstaller", new InstallEntry("Extracting uninstaller...", InstallFlags.NONE, flashProgram32Path) },
+                { "standalone", new InstallEntry("Installing 32-bit Standalone Flash Player...", InstallFlags.PLAYER, flashProgram32Path) },
+                { "ocx32", new InstallEntry("Installing 32-bit Flash Player for Internet Explorer...", InstallFlags.ACTIVEX, flash32Path) },
+                { "np32", new InstallEntry("Installing 32-bit Flash Player for Firefox...", InstallFlags.NETSCAPE, flash32Path, Properties.Resources.installNP) },
+                { "pp32", new InstallEntry("Installing 32-bit Flash Player for Chrome...", InstallFlags.PEPPER, flash32Path, Properties.Resources.installPP) },
+                { "ocx64", new InstallEntry("Installing 64-bit Flash Player for Internet Explorer...", InstallFlags.ACTIVEX | InstallFlags.X64, flash64Path) },
+                { "np64", new InstallEntry("Installing 64-bit Flash Player for Firefox...", InstallFlags.NETSCAPE | InstallFlags.X64, flash64Path, Properties.Resources.installNP64) },
+                { "pp64", new InstallEntry("Installing 64-bit Flash Player for Chrome...", InstallFlags.PEPPER | InstallFlags.X64, flash64Path, Properties.Resources.installPP64) },
+            };
 
-            if (flags.IsSet(InstallFlags.PEPPER)) {
-                form.UpdateProgressLabel("Installing 32-bit Flash Player for Chrome...", true);
-                ExtractArchive("flash_pp_32.zip", flash32Path);
-                registryToApply.Add(Properties.Resources.installPP);
-            }
-            if (flags.IsSet(InstallFlags.NETSCAPE)) {
-                form.UpdateProgressLabel("Installing 32-bit Flash Player for Firefox...", true);
-                ExtractArchive("flash_np_32.zip", flash32Path);
-                registryToApply.Add(Properties.Resources.installNP);
-            }
-            if (flags.IsSet(InstallFlags.ACTIVEX)) {
-                form.UpdateProgressLabel("Installing 32-bit Flash Player for Internet Explorer...", true);
-                ExtractArchive("flash_ocx_32.zip", flash32Path);
-            }
+            ExtractArchive(archive, entries, form, flags);
+
             if (flags.IsSet(InstallFlags.PLAYER)) {
-                form.UpdateProgressLabel("Installing 32-bit Standalone Flash Player...", true);
-                ExtractArchive("flash_player_32.zip", flashProgram32Path);
-
+                bool debug = flags.IsSet(InstallFlags.DEBUG);
                 string name = "Flash Player";
                 string description = "Standalone Flash Player " + UpdateChecker.GetFlashVersion();
-                string executable = Path.Combine(flashProgram32Path, UpdateChecker.GetFlashPlayerExecutable());
+                string executable = Path.Combine(flashProgram32Path, debug ? "flashplayer_sa_debug.exe" : "flashplayer_sa.exe");
 
-                if (UpdateChecker.IsDebug()) {
+                if (debug) {
                     name += " (Debug)";
                     description += " (Debug)";
                 }
@@ -103,20 +133,9 @@ namespace CleanFlashInstaller {
                 }
             }
 
-            if (Environment.Is64BitOperatingSystem) {
-                if (flags.IsSet(InstallFlags.PEPPER)) {
-                    form.UpdateProgressLabel("Installing 64-bit Flash Player for Chrome...", true);
-                    ExtractArchive("flash_pp_64.zip", flash64Path);
-                    registryToApply.Add(Properties.Resources.installPP64);
-                }
-                if (flags.IsSet(InstallFlags.NETSCAPE)) {
-                    form.UpdateProgressLabel("Installing 64-bit Flash Player for Firefox...", true);
-                    ExtractArchive("flash_np_64.zip", flash64Path);
-                    registryToApply.Add(Properties.Resources.installNP64);
-                }
-                if (flags.IsSet(InstallFlags.ACTIVEX)) {
-                    form.UpdateProgressLabel("Installing 64-bit Flash Player for Internet Explorer...", true);
-                    ExtractArchive("flash_ocx_64.zip", flash64Path);
+            foreach (InstallEntry entry in entries.Values) {
+                if (flags.IsSet(entry.RequiredFlags) && entry.RegistryInstructions != null) {
+                    registryToApply.Add(entry.RegistryInstructions);
                 }
             }
 
@@ -130,6 +149,19 @@ namespace CleanFlashInstaller {
                 if (Environment.Is64BitOperatingSystem) {
                     form.UpdateProgressLabel("Activating 64-bit Flash Player for Internet Explorer...", true);
                     RegisterActiveX(Path.Combine(flash64Path, string.Format("Flash64_{0}.ocx", SystemInfo.GetVersionPath())));
+                }
+            }
+        }
+
+       public static void Install(IProgressForm form, InstallFlags flags) {
+            if (flags.IsNoneSet()) {
+                // No packages should be installed.
+                return;
+            }
+
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("CleanFlashInstaller.cleanflash.7z")) {
+                using (SevenZipArchive archive = SevenZipArchive.Open(stream)) {
+                    InstallFromArchive(archive, form, flags);
                 }
             }
         }

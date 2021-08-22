@@ -106,8 +106,8 @@
     <StartupObject>CleanFlashInstaller.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
+    <Reference Include="SharpCompress, Version=0.24.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.24.0\lib\net35\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -122,6 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InstallEntry.cs" />
     <Compile Include="Installer.cs" />
     <Compile Include="InstallFlags.cs" />
     <Compile Include="InstallForm.cs">
@@ -146,15 +147,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
-    <EmbeddedResource Include="flash_np_32.zip" />
-    <EmbeddedResource Include="flash_np_64.zip" />
-    <EmbeddedResource Include="flash_ocx_32.zip" />
-    <EmbeddedResource Include="flash_ocx_64.zip" />
-    <EmbeddedResource Include="flash_pp_32.zip" />
-    <EmbeddedResource Include="flash_pp_64.zip" />
-    <EmbeddedResource Include="flash_gen_32.zip" />
-    <EmbeddedResource Include="flash_uninstaller.zip" />
-    <EmbeddedResource Include="flash_player_32.zip" />
+    <EmbeddedResource Include="cleanflash.7z" />
     <None Include="ILMerge.props" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

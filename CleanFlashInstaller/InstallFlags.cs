@@ -2,24 +2,37 @@
 
 namespace CleanFlashInstaller {
     public class InstallFlags {
+        public static int NONE = 0;
         public static int PEPPER = 1 << 0;
         public static int NETSCAPE = 1 << 1;
         public static int ACTIVEX = 1 << 2;
         public static int PLAYER = 1 << 3;
         public static int PLAYER_START_MENU = 1 << 4;
         public static int PLAYER_DESKTOP = 1 << 5;
+        public static int X64 = 1 << 6;
+        public static int DEBUG = 1 << 7;
 
         private static int UNINSTALL_TICKS = 9;
-        private static int INSTALL_GENERAL_TICKS = 2;
+        private static int INSTALL_GENERAL_TICKS = 5;
 
         private int value = 0;
 
-        public InstallFlags() {
-            value = 0;
+        public InstallFlags(int value) {
+            this.value = value;
+        }
+
+        public InstallFlags() : this(0) { }
+
+        public int GetValue() {
+            return value;
         }
 
         public bool IsSet(int flag) {
             return (value & flag) == flag;
+        }
+
+        public bool IsSet(InstallFlags flags) {
+            return IsSet(flags.GetValue());
         }
 
         public bool IsNoneSet() {

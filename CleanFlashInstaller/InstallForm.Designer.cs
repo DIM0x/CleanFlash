@@ -33,17 +33,12 @@ namespace CleanFlashInstaller {
             this.titleLabel = new System.Windows.Forms.Label();
             this.subtitleLabel = new System.Windows.Forms.Label();
             this.disclaimerPanel = new System.Windows.Forms.Panel();
-            this.disclaimerBox = new CleanFlashCommon.ImageCheckBox();
             this.choicePanel = new System.Windows.Forms.Panel();
             this.activeXLabel = new System.Windows.Forms.Label();
-            this.activeXBox = new CleanFlashCommon.ImageCheckBox();
             this.netscapeLabel = new System.Windows.Forms.Label();
-            this.netscapeBox = new CleanFlashCommon.ImageCheckBox();
             this.pepperLabel = new System.Windows.Forms.Label();
-            this.pepperBox = new CleanFlashCommon.ImageCheckBox();
             this.browserAskLabel = new System.Windows.Forms.Label();
             this.installPanel = new System.Windows.Forms.Panel();
-            this.progressBar = new CleanFlashCommon.SmoothProgressBar();
             this.progressLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.beforeInstallPanel = new System.Windows.Forms.Panel();
@@ -51,19 +46,27 @@ namespace CleanFlashInstaller {
             this.completePanel = new System.Windows.Forms.Panel();
             this.completeLabel = new System.Windows.Forms.LinkLabel();
             this.failurePanel = new System.Windows.Forms.Panel();
-            this.copyErrorButton = new CleanFlashCommon.GradientButton();
             this.failureBox = new System.Windows.Forms.TextBox();
             this.failureText = new System.Windows.Forms.Label();
-            this.nextButton = new CleanFlashCommon.GradientButton();
-            this.prevButton = new CleanFlashCommon.GradientButton();
             this.playerChoicePanel = new System.Windows.Forms.Panel();
             this.playerStartMenuLabel = new System.Windows.Forms.Label();
-            this.playerStartMenuBox = new CleanFlashCommon.ImageCheckBox();
             this.playerDesktopLabel = new System.Windows.Forms.Label();
-            this.playerDesktopBox = new CleanFlashCommon.ImageCheckBox();
             this.playerLabel = new System.Windows.Forms.Label();
-            this.playerBox = new CleanFlashCommon.ImageCheckBox();
             this.playerAskLabel = new System.Windows.Forms.Label();
+            this.nextButton = new CleanFlashCommon.GradientButton();
+            this.prevButton = new CleanFlashCommon.GradientButton();
+            this.playerStartMenuBox = new CleanFlashCommon.ImageCheckBox();
+            this.playerDesktopBox = new CleanFlashCommon.ImageCheckBox();
+            this.playerBox = new CleanFlashCommon.ImageCheckBox();
+            this.activeXBox = new CleanFlashCommon.ImageCheckBox();
+            this.netscapeBox = new CleanFlashCommon.ImageCheckBox();
+            this.pepperBox = new CleanFlashCommon.ImageCheckBox();
+            this.disclaimerBox = new CleanFlashCommon.ImageCheckBox();
+            this.copyErrorButton = new CleanFlashCommon.GradientButton();
+            this.progressBar = new CleanFlashCommon.SmoothProgressBar();
+            this.debugChoicePanel = new System.Windows.Forms.Panel();
+            this.debugAskLabel = new System.Windows.Forms.Label();
+            this.debugButton = new CleanFlashCommon.GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.flashLogo)).BeginInit();
             this.disclaimerPanel.SuspendLayout();
             this.choicePanel.SuspendLayout();
@@ -72,6 +75,7 @@ namespace CleanFlashInstaller {
             this.completePanel.SuspendLayout();
             this.failurePanel.SuspendLayout();
             this.playerChoicePanel.SuspendLayout();
+            this.debugChoicePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // disclaimerLabel
@@ -139,26 +143,6 @@ namespace CleanFlashInstaller {
             this.disclaimerPanel.Size = new System.Drawing.Size(545, 105);
             this.disclaimerPanel.TabIndex = 8;
             // 
-            // disclaimerBox
-            // 
-            this.disclaimerBox.Appearance = System.Windows.Forms.Appearance.Button;
-            this.disclaimerBox.AutoSize = true;
-            this.disclaimerBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.disclaimerBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.disclaimerBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.disclaimerBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.disclaimerBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.disclaimerBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.disclaimerBox.ImageIndex = 0;
-            this.disclaimerBox.ImageList = this.checkboxImages;
-            this.disclaimerBox.Location = new System.Drawing.Point(0, 0);
-            this.disclaimerBox.Margin = new System.Windows.Forms.Padding(0);
-            this.disclaimerBox.Name = "disclaimerBox";
-            this.disclaimerBox.Size = new System.Drawing.Size(21, 21);
-            this.disclaimerBox.TabIndex = 2;
-            this.disclaimerBox.UseVisualStyleBackColor = true;
-            this.disclaimerBox.CheckedChanged += new System.EventHandler(this.disclaimerBox_CheckedChanged);
-            // 
             // choicePanel
             // 
             this.choicePanel.Controls.Add(this.activeXLabel);
@@ -183,27 +167,6 @@ namespace CleanFlashInstaller {
             this.activeXLabel.Text = "ActiveX (OCX)\r\n(IE/Embedded/Desktop)";
             this.activeXLabel.Click += new System.EventHandler(this.activeXLabel_Click);
             // 
-            // activeXBox
-            // 
-            this.activeXBox.Appearance = System.Windows.Forms.Appearance.Button;
-            this.activeXBox.AutoSize = true;
-            this.activeXBox.Checked = true;
-            this.activeXBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activeXBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.activeXBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.activeXBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.activeXBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.activeXBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.activeXBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.activeXBox.ImageIndex = 1;
-            this.activeXBox.ImageList = this.checkboxImages;
-            this.activeXBox.Location = new System.Drawing.Point(365, 47);
-            this.activeXBox.Margin = new System.Windows.Forms.Padding(0);
-            this.activeXBox.Name = "activeXBox";
-            this.activeXBox.Size = new System.Drawing.Size(21, 21);
-            this.activeXBox.TabIndex = 7;
-            this.activeXBox.UseVisualStyleBackColor = true;
-            // 
             // netscapeLabel
             // 
             this.netscapeLabel.AutoSize = true;
@@ -214,27 +177,6 @@ namespace CleanFlashInstaller {
             this.netscapeLabel.Text = "Netscape API (NPAPI)\r\n(Firefox/ESR/Basilisk)\r\n";
             this.netscapeLabel.Click += new System.EventHandler(this.netscapeLabel_Click);
             // 
-            // netscapeBox
-            // 
-            this.netscapeBox.Appearance = System.Windows.Forms.Appearance.Button;
-            this.netscapeBox.AutoSize = true;
-            this.netscapeBox.Checked = true;
-            this.netscapeBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.netscapeBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.netscapeBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.netscapeBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.netscapeBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.netscapeBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.netscapeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.netscapeBox.ImageIndex = 1;
-            this.netscapeBox.ImageList = this.checkboxImages;
-            this.netscapeBox.Location = new System.Drawing.Point(186, 47);
-            this.netscapeBox.Margin = new System.Windows.Forms.Padding(0);
-            this.netscapeBox.Name = "netscapeBox";
-            this.netscapeBox.Size = new System.Drawing.Size(21, 21);
-            this.netscapeBox.TabIndex = 5;
-            this.netscapeBox.UseVisualStyleBackColor = true;
-            // 
             // pepperLabel
             // 
             this.pepperLabel.AutoSize = true;
@@ -244,27 +186,6 @@ namespace CleanFlashInstaller {
             this.pepperLabel.TabIndex = 4;
             this.pepperLabel.Text = "Pepper API (PPAPI)\r\n(Chrome/Opera/Brave)";
             this.pepperLabel.Click += new System.EventHandler(this.pepperLabel_Click);
-            // 
-            // pepperBox
-            // 
-            this.pepperBox.Appearance = System.Windows.Forms.Appearance.Button;
-            this.pepperBox.AutoSize = true;
-            this.pepperBox.Checked = true;
-            this.pepperBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.pepperBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pepperBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pepperBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pepperBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pepperBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pepperBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pepperBox.ImageIndex = 1;
-            this.pepperBox.ImageList = this.checkboxImages;
-            this.pepperBox.Location = new System.Drawing.Point(0, 47);
-            this.pepperBox.Margin = new System.Windows.Forms.Padding(0);
-            this.pepperBox.Name = "pepperBox";
-            this.pepperBox.Size = new System.Drawing.Size(21, 21);
-            this.pepperBox.TabIndex = 3;
-            this.pepperBox.UseVisualStyleBackColor = true;
             // 
             // browserAskLabel
             // 
@@ -284,18 +205,6 @@ namespace CleanFlashInstaller {
             this.installPanel.Name = "installPanel";
             this.installPanel.Size = new System.Drawing.Size(545, 105);
             this.installPanel.TabIndex = 10;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(49, 58);
-            this.progressBar.Maximum = 100;
-            this.progressBar.Minimum = 0;
-            this.progressBar.Name = "progressBar";
-            this.progressBar.ProgressBarColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(147)))), ((int)(((byte)(232)))));
-            this.progressBar.ProgressBarColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(99)))), ((int)(((byte)(232)))));
-            this.progressBar.Size = new System.Drawing.Size(451, 23);
-            this.progressBar.TabIndex = 2;
-            this.progressBar.Value = 0;
             // 
             // progressLabel
             // 
@@ -363,23 +272,6 @@ namespace CleanFlashInstaller {
             this.failurePanel.Size = new System.Drawing.Size(545, 105);
             this.failurePanel.TabIndex = 13;
             // 
-            // copyErrorButton
-            // 
-            this.copyErrorButton.BackColor = System.Drawing.Color.Black;
-            this.copyErrorButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.copyErrorButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.copyErrorButton.DisableAlpha = 0.644D;
-            this.copyErrorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copyErrorButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.copyErrorButton.HoverAlpha = 0.875D;
-            this.copyErrorButton.Location = new System.Drawing.Point(441, 58);
-            this.copyErrorButton.Name = "copyErrorButton";
-            this.copyErrorButton.Size = new System.Drawing.Size(104, 31);
-            this.copyErrorButton.TabIndex = 14;
-            this.copyErrorButton.Text = "COPY";
-            this.copyErrorButton.UseVisualStyleBackColor = false;
-            this.copyErrorButton.Click += new System.EventHandler(this.copyErrorButton_Click);
-            // 
             // failureBox
             // 
             this.failureBox.Location = new System.Drawing.Point(4, 44);
@@ -398,6 +290,59 @@ namespace CleanFlashInstaller {
             this.failureText.TabIndex = 14;
             this.failureText.Text = "Oops! The installation process has encountered an unexpected problem.\r\nThe follow" +
     "ing details could be useful. Press the Retry button to try again.";
+            // 
+            // playerChoicePanel
+            // 
+            this.playerChoicePanel.Controls.Add(this.playerStartMenuLabel);
+            this.playerChoicePanel.Controls.Add(this.playerStartMenuBox);
+            this.playerChoicePanel.Controls.Add(this.playerDesktopLabel);
+            this.playerChoicePanel.Controls.Add(this.playerDesktopBox);
+            this.playerChoicePanel.Controls.Add(this.playerLabel);
+            this.playerChoicePanel.Controls.Add(this.playerBox);
+            this.playerChoicePanel.Controls.Add(this.playerAskLabel);
+            this.playerChoicePanel.Location = new System.Drawing.Point(90, 162);
+            this.playerChoicePanel.Name = "playerChoicePanel";
+            this.playerChoicePanel.Size = new System.Drawing.Size(545, 105);
+            this.playerChoicePanel.TabIndex = 10;
+            // 
+            // playerStartMenuLabel
+            // 
+            this.playerStartMenuLabel.AutoSize = true;
+            this.playerStartMenuLabel.Location = new System.Drawing.Point(389, 47);
+            this.playerStartMenuLabel.Name = "playerStartMenuLabel";
+            this.playerStartMenuLabel.Size = new System.Drawing.Size(104, 34);
+            this.playerStartMenuLabel.TabIndex = 8;
+            this.playerStartMenuLabel.Text = "Create Shortcuts\r\nin Start Menu";
+            this.playerStartMenuLabel.Click += new System.EventHandler(this.playerStartMenuLabel_Click);
+            // 
+            // playerDesktopLabel
+            // 
+            this.playerDesktopLabel.AutoSize = true;
+            this.playerDesktopLabel.Location = new System.Drawing.Point(210, 47);
+            this.playerDesktopLabel.Name = "playerDesktopLabel";
+            this.playerDesktopLabel.Size = new System.Drawing.Size(104, 34);
+            this.playerDesktopLabel.TabIndex = 6;
+            this.playerDesktopLabel.Text = "Create Shortcuts\r\non Desktop";
+            this.playerDesktopLabel.Click += new System.EventHandler(this.playerDesktopLabel_Click);
+            // 
+            // playerLabel
+            // 
+            this.playerLabel.AutoSize = true;
+            this.playerLabel.Location = new System.Drawing.Point(24, 47);
+            this.playerLabel.Name = "playerLabel";
+            this.playerLabel.Size = new System.Drawing.Size(110, 34);
+            this.playerLabel.TabIndex = 4;
+            this.playerLabel.Text = "Install Standalone\r\nFlash Player";
+            this.playerLabel.Click += new System.EventHandler(this.playerLabel_Click);
+            // 
+            // playerAskLabel
+            // 
+            this.playerAskLabel.AutoSize = true;
+            this.playerAskLabel.Location = new System.Drawing.Point(-2, 2);
+            this.playerAskLabel.Name = "playerAskLabel";
+            this.playerAskLabel.Size = new System.Drawing.Size(314, 17);
+            this.playerAskLabel.TabIndex = 0;
+            this.playerAskLabel.Text = "Would you like to install the standalone Flash Player?";
             // 
             // nextButton
             // 
@@ -433,30 +378,6 @@ namespace CleanFlashInstaller {
             this.prevButton.UseVisualStyleBackColor = false;
             this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
-            // playerChoicePanel
-            // 
-            this.playerChoicePanel.Controls.Add(this.playerStartMenuLabel);
-            this.playerChoicePanel.Controls.Add(this.playerStartMenuBox);
-            this.playerChoicePanel.Controls.Add(this.playerDesktopLabel);
-            this.playerChoicePanel.Controls.Add(this.playerDesktopBox);
-            this.playerChoicePanel.Controls.Add(this.playerLabel);
-            this.playerChoicePanel.Controls.Add(this.playerBox);
-            this.playerChoicePanel.Controls.Add(this.playerAskLabel);
-            this.playerChoicePanel.Location = new System.Drawing.Point(90, 162);
-            this.playerChoicePanel.Name = "playerChoicePanel";
-            this.playerChoicePanel.Size = new System.Drawing.Size(545, 105);
-            this.playerChoicePanel.TabIndex = 10;
-            // 
-            // playerStartMenuLabel
-            // 
-            this.playerStartMenuLabel.AutoSize = true;
-            this.playerStartMenuLabel.Location = new System.Drawing.Point(389, 47);
-            this.playerStartMenuLabel.Name = "playerStartMenuLabel";
-            this.playerStartMenuLabel.Size = new System.Drawing.Size(104, 34);
-            this.playerStartMenuLabel.TabIndex = 8;
-            this.playerStartMenuLabel.Text = "Create Shortcuts\r\nin Start Menu";
-            this.playerStartMenuLabel.Click += new System.EventHandler(this.playerStartMenuLabel_Click);
-            // 
             // playerStartMenuBox
             // 
             this.playerStartMenuBox.Appearance = System.Windows.Forms.Appearance.Button;
@@ -478,16 +399,6 @@ namespace CleanFlashInstaller {
             this.playerStartMenuBox.TabIndex = 7;
             this.playerStartMenuBox.UseVisualStyleBackColor = true;
             // 
-            // playerDesktopLabel
-            // 
-            this.playerDesktopLabel.AutoSize = true;
-            this.playerDesktopLabel.Location = new System.Drawing.Point(210, 47);
-            this.playerDesktopLabel.Name = "playerDesktopLabel";
-            this.playerDesktopLabel.Size = new System.Drawing.Size(104, 34);
-            this.playerDesktopLabel.TabIndex = 6;
-            this.playerDesktopLabel.Text = "Create Shortcuts\r\non Desktop";
-            this.playerDesktopLabel.Click += new System.EventHandler(this.playerDesktopLabel_Click);
-            // 
             // playerDesktopBox
             // 
             this.playerDesktopBox.Appearance = System.Windows.Forms.Appearance.Button;
@@ -508,16 +419,6 @@ namespace CleanFlashInstaller {
             this.playerDesktopBox.Size = new System.Drawing.Size(21, 21);
             this.playerDesktopBox.TabIndex = 5;
             this.playerDesktopBox.UseVisualStyleBackColor = true;
-            // 
-            // playerLabel
-            // 
-            this.playerLabel.AutoSize = true;
-            this.playerLabel.Location = new System.Drawing.Point(24, 47);
-            this.playerLabel.Name = "playerLabel";
-            this.playerLabel.Size = new System.Drawing.Size(110, 34);
-            this.playerLabel.TabIndex = 4;
-            this.playerLabel.Text = "Install Standalone\r\nFlash Player";
-            this.playerLabel.Click += new System.EventHandler(this.playerLabel_Click);
             // 
             // playerBox
             // 
@@ -541,14 +442,154 @@ namespace CleanFlashInstaller {
             this.playerBox.UseVisualStyleBackColor = true;
             this.playerBox.CheckedChanged += new System.EventHandler(this.playerBox_CheckedChanged);
             // 
-            // playerAskLabel
+            // activeXBox
             // 
-            this.playerAskLabel.AutoSize = true;
-            this.playerAskLabel.Location = new System.Drawing.Point(-2, 2);
-            this.playerAskLabel.Name = "playerAskLabel";
-            this.playerAskLabel.Size = new System.Drawing.Size(314, 17);
-            this.playerAskLabel.TabIndex = 0;
-            this.playerAskLabel.Text = "Would you like to install the standalone Flash Player?";
+            this.activeXBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.activeXBox.AutoSize = true;
+            this.activeXBox.Checked = true;
+            this.activeXBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activeXBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.activeXBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.activeXBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.activeXBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.activeXBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.activeXBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.activeXBox.ImageIndex = 1;
+            this.activeXBox.ImageList = this.checkboxImages;
+            this.activeXBox.Location = new System.Drawing.Point(365, 47);
+            this.activeXBox.Margin = new System.Windows.Forms.Padding(0);
+            this.activeXBox.Name = "activeXBox";
+            this.activeXBox.Size = new System.Drawing.Size(21, 21);
+            this.activeXBox.TabIndex = 7;
+            this.activeXBox.UseVisualStyleBackColor = true;
+            // 
+            // netscapeBox
+            // 
+            this.netscapeBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.netscapeBox.AutoSize = true;
+            this.netscapeBox.Checked = true;
+            this.netscapeBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.netscapeBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.netscapeBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.netscapeBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.netscapeBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.netscapeBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.netscapeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.netscapeBox.ImageIndex = 1;
+            this.netscapeBox.ImageList = this.checkboxImages;
+            this.netscapeBox.Location = new System.Drawing.Point(186, 47);
+            this.netscapeBox.Margin = new System.Windows.Forms.Padding(0);
+            this.netscapeBox.Name = "netscapeBox";
+            this.netscapeBox.Size = new System.Drawing.Size(21, 21);
+            this.netscapeBox.TabIndex = 5;
+            this.netscapeBox.UseVisualStyleBackColor = true;
+            // 
+            // pepperBox
+            // 
+            this.pepperBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.pepperBox.AutoSize = true;
+            this.pepperBox.Checked = true;
+            this.pepperBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.pepperBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pepperBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pepperBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pepperBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pepperBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pepperBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pepperBox.ImageIndex = 1;
+            this.pepperBox.ImageList = this.checkboxImages;
+            this.pepperBox.Location = new System.Drawing.Point(0, 47);
+            this.pepperBox.Margin = new System.Windows.Forms.Padding(0);
+            this.pepperBox.Name = "pepperBox";
+            this.pepperBox.Size = new System.Drawing.Size(21, 21);
+            this.pepperBox.TabIndex = 3;
+            this.pepperBox.UseVisualStyleBackColor = true;
+            // 
+            // disclaimerBox
+            // 
+            this.disclaimerBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.disclaimerBox.AutoSize = true;
+            this.disclaimerBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.disclaimerBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.disclaimerBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.disclaimerBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.disclaimerBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.disclaimerBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.disclaimerBox.ImageIndex = 0;
+            this.disclaimerBox.ImageList = this.checkboxImages;
+            this.disclaimerBox.Location = new System.Drawing.Point(0, 0);
+            this.disclaimerBox.Margin = new System.Windows.Forms.Padding(0);
+            this.disclaimerBox.Name = "disclaimerBox";
+            this.disclaimerBox.Size = new System.Drawing.Size(21, 21);
+            this.disclaimerBox.TabIndex = 2;
+            this.disclaimerBox.UseVisualStyleBackColor = true;
+            this.disclaimerBox.CheckedChanged += new System.EventHandler(this.disclaimerBox_CheckedChanged);
+            // 
+            // copyErrorButton
+            // 
+            this.copyErrorButton.BackColor = System.Drawing.Color.Black;
+            this.copyErrorButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.copyErrorButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.copyErrorButton.DisableAlpha = 0.644D;
+            this.copyErrorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyErrorButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.copyErrorButton.HoverAlpha = 0.875D;
+            this.copyErrorButton.Location = new System.Drawing.Point(441, 58);
+            this.copyErrorButton.Name = "copyErrorButton";
+            this.copyErrorButton.Size = new System.Drawing.Size(104, 31);
+            this.copyErrorButton.TabIndex = 14;
+            this.copyErrorButton.Text = "COPY";
+            this.copyErrorButton.UseVisualStyleBackColor = false;
+            this.copyErrorButton.Click += new System.EventHandler(this.copyErrorButton_Click);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(49, 58);
+            this.progressBar.Maximum = 100;
+            this.progressBar.Minimum = 0;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.ProgressBarColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(147)))), ((int)(((byte)(232)))));
+            this.progressBar.ProgressBarColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(99)))), ((int)(((byte)(232)))));
+            this.progressBar.Size = new System.Drawing.Size(451, 23);
+            this.progressBar.TabIndex = 2;
+            this.progressBar.Value = 0;
+            // 
+            // debugChoicePanel
+            // 
+            this.debugChoicePanel.Controls.Add(this.debugButton);
+            this.debugChoicePanel.Controls.Add(this.debugAskLabel);
+            this.debugChoicePanel.Location = new System.Drawing.Point(90, 163);
+            this.debugChoicePanel.Name = "debugChoicePanel";
+            this.debugChoicePanel.Size = new System.Drawing.Size(545, 105);
+            this.debugChoicePanel.TabIndex = 11;
+            // 
+            // debugAskLabel
+            // 
+            this.debugAskLabel.AutoSize = true;
+            this.debugAskLabel.Location = new System.Drawing.Point(-2, 2);
+            this.debugAskLabel.Name = "debugAskLabel";
+            this.debugAskLabel.Size = new System.Drawing.Size(535, 51);
+            this.debugAskLabel.TabIndex = 0;
+            this.debugAskLabel.Text = "Would you like to install the debug version of Clean Flash Player?\r\nYou should on" +
+    "ly choose the debug version if you are planning to create Flash applications.\r\nI" +
+    "f you are not sure, simply press NEXT.";
+            // 
+            // debugButton
+            // 
+            this.debugButton.BackColor = System.Drawing.Color.Black;
+            this.debugButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.debugButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.debugButton.DisableAlpha = 0.644D;
+            this.debugButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.debugButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.debugButton.HoverAlpha = 0.875D;
+            this.debugButton.Location = new System.Drawing.Point(186, 65);
+            this.debugButton.Name = "debugButton";
+            this.debugButton.Size = new System.Drawing.Size(176, 31);
+            this.debugButton.TabIndex = 8;
+            this.debugButton.Text = "INSTALL DEBUG VERSION";
+            this.debugButton.UseVisualStyleBackColor = false;
+            this.debugButton.Click += new System.EventHandler(this.debugButton_Click);
             // 
             // InstallForm
             // 
@@ -562,13 +603,14 @@ namespace CleanFlashInstaller {
             this.Controls.Add(this.flashLogo);
             this.Controls.Add(this.prevButton);
             this.Controls.Add(this.separator);
+            this.Controls.Add(this.completePanel);
+            this.Controls.Add(this.beforeInstallPanel);
+            this.Controls.Add(this.installPanel);
+            this.Controls.Add(this.debugChoicePanel);
             this.Controls.Add(this.playerChoicePanel);
             this.Controls.Add(this.choicePanel);
             this.Controls.Add(this.disclaimerPanel);
             this.Controls.Add(this.failurePanel);
-            this.Controls.Add(this.completePanel);
-            this.Controls.Add(this.beforeInstallPanel);
-            this.Controls.Add(this.installPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -594,6 +636,8 @@ namespace CleanFlashInstaller {
             this.failurePanel.PerformLayout();
             this.playerChoicePanel.ResumeLayout(false);
             this.playerChoicePanel.PerformLayout();
+            this.debugChoicePanel.ResumeLayout(false);
+            this.debugChoicePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,6 +683,9 @@ namespace CleanFlashInstaller {
         private System.Windows.Forms.Label playerLabel;
         private CleanFlashCommon.ImageCheckBox playerBox;
         private System.Windows.Forms.Label playerAskLabel;
+        private System.Windows.Forms.Panel debugChoicePanel;
+        private CleanFlashCommon.GradientButton debugButton;
+        private System.Windows.Forms.Label debugAskLabel;
     }
 }
 
