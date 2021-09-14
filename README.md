@@ -2,7 +2,7 @@
 
 [![Patreon](https://img.shields.io/badge/Kofi-donate-purple.svg)](https://ko-fi.com/disyer) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/darktohka/FlashPatch/blob/master/LICENSE)
 
-![Image of Clean Flash Player](https://i.imgur.com/XbhQ3ZF.png)
+![Image of Clean Flash Player](https://i.imgur.com/565LJBI.png)
 
 [Download latest version](https://github.com/CleanFlash/installer/releases/latest)
 
