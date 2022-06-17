@@ -13,7 +13,7 @@ namespace CleanFlashInstaller {
     public class Installer {
         public static void RegisterActiveX(string filename) {
             Directory.SetCurrentDirectory(Path.GetDirectoryName(filename));
-            ExitedProcess process = ProcessRunner.RunProcess(
+            ExitedProcess process = ProcessUtils.RunProcess(
                 new ProcessStartInfo {
                     FileName = "regsvr32.exe",
                     Arguments = "/s " + Path.GetFileName(filename),

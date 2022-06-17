@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CleanFlashCommon {
     public class Uninstaller {
@@ -12,10 +13,14 @@ namespace CleanFlashCommon {
             "flashcenterservice", "flashcenteruninst", "flashplay", "update", "wow_helper",
             "dummy_cmd", "flashhelperservice",
             // Flash Player-related processes
-            "flashplayerapp", "flashplayer_sa", "flashplayer_sa_debug",
+            "flashplayerapp", "flashplayer_sa", "flashplayer_sa_debug"
+        };
+        private static string[] CONDITIONAL_PROCESSES = new string[]
+        {
+            // Plugin container for Firefox
+            "plugin-container",
             // Browsers that might be using Flash Player right now
-            "opera", "iexplore", "chrome", "chromium", "brave", "vivaldi", "basilisk", "msedge",
-            "seamonkey", "palemoon", "k-meleon", "plugin-container", "waterfox"
+            "opera", "iexplore", "chrome", "chromium", "brave", "vivaldi", "msedge"
         };
 
         static Uninstaller() {
@@ -31,7 +36,7 @@ namespace CleanFlashCommon {
         }
 
         public static void DeleteTask(string task) {
-            ProcessRunner.RunUnmanagedProcess(
+            ProcessUtils.RunUnmanagedProcess(
                 new ProcessStartInfo {
                     FileName = "schtasks.exe",
                     Arguments = "/delete /tn \"" + task + "\" /f",
@@ -42,7 +47,7 @@ namespace CleanFlashCommon {
         }
 
         public static void StopService(string service) {
-            ProcessRunner.RunUnmanagedProcess(
+            ProcessUtils.RunUnmanagedProcess(
                 new ProcessStartInfo {
                     FileName = "net.exe",
                     Arguments = "stop \"" + service + "\"",
@@ -56,7 +61,7 @@ namespace CleanFlashCommon {
             // First, stop the service.
             StopService(service);
 
-            ProcessRunner.RunUnmanagedProcess(
+            ProcessUtils.RunUnmanagedProcess(
                 new ProcessStartInfo {
                     FileName = "sc.exe",
                     Arguments = "delete \"" + service + "\"",
@@ -125,10 +130,25 @@ namespace CleanFlashCommon {
             }
         }
 
+
+    public static bool ShouldKillConditionalProcess(Process process) {
+            if (!CONDITIONAL_PROCESSES.Contains(process.ProcessName.ToLower())) {
+                return false;
+            }
+
+            foreach (string module in ProcessUtils.CollectModules(process)) {
+                if (Regex.IsMatch(module, "^(flash(32|64)|libpepflash|npswf)", RegexOptions.Compiled | RegexOptions.IgnoreCase)) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public static void StopProcesses() {
             // Stop all processes that might interfere with the install process
             List<Process> processes = Process.GetProcesses()
-                .Where(process => PROCESSES_TO_KILL.Contains(process.ProcessName.ToLower()))
+                .Where(process => PROCESSES_TO_KILL.Contains(process.ProcessName.ToLower()) || ShouldKillConditionalProcess(process))
                 .OrderBy(o => o.StartTime)
                 .ToList();
 

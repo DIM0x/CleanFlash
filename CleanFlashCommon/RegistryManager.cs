@@ -14,7 +14,7 @@ namespace CleanFlashCommon {
 
             Directory.SetCurrentDirectory(Path.GetDirectoryName(filename));
 
-            ExitedProcess process = ProcessRunner.RunProcess(
+            ExitedProcess process = ProcessUtils.RunProcess(
                 new ProcessStartInfo {
                     FileName = "reg.exe",
                     Arguments = "import " + Path.GetFileName(filename),

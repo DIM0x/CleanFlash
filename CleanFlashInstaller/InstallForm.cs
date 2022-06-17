@@ -95,10 +95,10 @@ If you ever change your mind, check out Clean Flash Player's website!";
                     browsers.Add("Internet Explorer");
                 }
 
-                text = string.Format("You are about to install Clean Flash Player.\nPlease close all browsers, including Google Chrome, Mozilla Firefox and Internet Explorer.\n\nThe installer will close all browser windows, uninstall previous versions of Flash Player and\nFlash Center, and install Flash for {0}.", JoinStringsWithAnd(browsers));
+                text = string.Format("You are about to install Clean Flash Player.\nPlease close any browser windows running Flash content before you continue.\n\nThe installer will close all browser windows running Flash, uninstall previous versions of Flash Player and\nFlash Center, and install Flash for {0}.", JoinStringsWithAnd(browsers));
                 nextButton.Text = "INSTALL";
             } else {
-                text = "You are about to uninstall Clean Flash Player.\nPlease close all browsers, including Google Chrome, Mozilla Firefox and Internet Explorer.\n\nThe installer will completely remove all versions of Flash Player from this computer,\nincluding Clean Flash Player and older versions of Adobe Flash Player.";
+                text = "You are about to uninstall Clean Flash Player.\nPlease close any browser windows running Flash content before you continue.\n\nThe installer will completely remove all versions of Flash Player from this computer,\nincluding Clean Flash Player and older versions of Adobe Flash Player.";
                 nextButton.Text = "UNINSTALL";
             }
 
