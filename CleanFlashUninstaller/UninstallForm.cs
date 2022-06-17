@@ -115,7 +115,7 @@ namespace CleanFlashUninstaller {
 
         private void completeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             if (e.Link.Start == 212) {
-                Process.Start("https://basilisk-browser.org");
+                Process.Start("https://classic.waterfox.net");
             } else {
                 Process.Start("https://cleanflash.github.io");
             }

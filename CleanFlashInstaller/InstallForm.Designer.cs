@@ -77,9 +77,9 @@ namespace CleanFlashInstaller {
             this.playerChoicePanel.SuspendLayout();
             this.debugChoicePanel.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // disclaimerLabel
-            // 
+            //
             this.disclaimerLabel.AutoSize = true;
             this.disclaimerLabel.Location = new System.Drawing.Point(25, 0);
             this.disclaimerLabel.Name = "disclaimerLabel";
@@ -87,25 +87,25 @@ namespace CleanFlashInstaller {
             this.disclaimerLabel.TabIndex = 0;
             this.disclaimerLabel.Text = resources.GetString("disclaimerLabel.Text");
             this.disclaimerLabel.Click += new System.EventHandler(this.disclaimerLabel_Click);
-            // 
+            //
             // separator
-            // 
+            //
             this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.separator.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.separator.Location = new System.Drawing.Point(0, 270);
             this.separator.Name = "separator";
             this.separator.Size = new System.Drawing.Size(732, 1);
             this.separator.TabIndex = 1;
-            // 
+            //
             // checkboxImages
-            // 
+            //
             this.checkboxImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("checkboxImages.ImageStream")));
             this.checkboxImages.TransparentColor = System.Drawing.Color.Transparent;
             this.checkboxImages.Images.SetKeyName(0, "checkboxOff.png");
             this.checkboxImages.Images.SetKeyName(1, "checkboxOn.png");
-            // 
+            //
             // flashLogo
-            // 
+            //
             this.flashLogo.Image = global::CleanFlashInstaller.Properties.Resources.flashLogo;
             this.flashLogo.Location = new System.Drawing.Point(90, 36);
             this.flashLogo.Margin = new System.Windows.Forms.Padding(0);
@@ -113,9 +113,9 @@ namespace CleanFlashInstaller {
             this.flashLogo.Size = new System.Drawing.Size(109, 107);
             this.flashLogo.TabIndex = 4;
             this.flashLogo.TabStop = false;
-            // 
+            //
             // titleLabel
-            // 
+            //
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 24F);
             this.titleLabel.Location = new System.Drawing.Point(233, 54);
@@ -123,9 +123,9 @@ namespace CleanFlashInstaller {
             this.titleLabel.Size = new System.Drawing.Size(274, 45);
             this.titleLabel.TabIndex = 5;
             this.titleLabel.Text = "Clean Flash Player";
-            // 
+            //
             // subtitleLabel
-            // 
+            //
             this.subtitleLabel.AutoSize = true;
             this.subtitleLabel.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.subtitleLabel.Location = new System.Drawing.Point(280, 99);
@@ -133,18 +133,18 @@ namespace CleanFlashInstaller {
             this.subtitleLabel.Size = new System.Drawing.Size(231, 25);
             this.subtitleLabel.TabIndex = 6;
             this.subtitleLabel.Text = "built from unknown version";
-            // 
+            //
             // disclaimerPanel
-            // 
+            //
             this.disclaimerPanel.Controls.Add(this.disclaimerBox);
             this.disclaimerPanel.Controls.Add(this.disclaimerLabel);
             this.disclaimerPanel.Location = new System.Drawing.Point(90, 162);
             this.disclaimerPanel.Name = "disclaimerPanel";
             this.disclaimerPanel.Size = new System.Drawing.Size(545, 105);
             this.disclaimerPanel.TabIndex = 8;
-            // 
+            //
             // choicePanel
-            // 
+            //
             this.choicePanel.Controls.Add(this.activeXLabel);
             this.choicePanel.Controls.Add(this.activeXBox);
             this.choicePanel.Controls.Add(this.netscapeLabel);
@@ -156,9 +156,9 @@ namespace CleanFlashInstaller {
             this.choicePanel.Name = "choicePanel";
             this.choicePanel.Size = new System.Drawing.Size(545, 105);
             this.choicePanel.TabIndex = 9;
-            // 
+            //
             // activeXLabel
-            // 
+            //
             this.activeXLabel.AutoSize = true;
             this.activeXLabel.Location = new System.Drawing.Point(389, 47);
             this.activeXLabel.Name = "activeXLabel";
@@ -166,19 +166,19 @@ namespace CleanFlashInstaller {
             this.activeXLabel.TabIndex = 8;
             this.activeXLabel.Text = "ActiveX (OCX)\r\n(IE/Embedded/Desktop)";
             this.activeXLabel.Click += new System.EventHandler(this.activeXLabel_Click);
-            // 
+            //
             // netscapeLabel
-            // 
+            //
             this.netscapeLabel.AutoSize = true;
             this.netscapeLabel.Location = new System.Drawing.Point(210, 47);
             this.netscapeLabel.Name = "netscapeLabel";
             this.netscapeLabel.Size = new System.Drawing.Size(131, 34);
             this.netscapeLabel.TabIndex = 6;
-            this.netscapeLabel.Text = "Netscape API (NPAPI)\r\n(Firefox/ESR/Basilisk)\r\n";
+            this.netscapeLabel.Text = "Netscape API (NPAPI)\r\n(Firefox/ESR/Waterfox)\r\n";
             this.netscapeLabel.Click += new System.EventHandler(this.netscapeLabel_Click);
-            // 
+            //
             // pepperLabel
-            // 
+            //
             this.pepperLabel.AutoSize = true;
             this.pepperLabel.Location = new System.Drawing.Point(24, 47);
             this.pepperLabel.Name = "pepperLabel";
@@ -186,18 +186,18 @@ namespace CleanFlashInstaller {
             this.pepperLabel.TabIndex = 4;
             this.pepperLabel.Text = "Pepper API (PPAPI)\r\n(Chrome/Opera/Brave)";
             this.pepperLabel.Click += new System.EventHandler(this.pepperLabel_Click);
-            // 
+            //
             // browserAskLabel
-            // 
+            //
             this.browserAskLabel.AutoSize = true;
             this.browserAskLabel.Location = new System.Drawing.Point(-2, 2);
             this.browserAskLabel.Name = "browserAskLabel";
             this.browserAskLabel.Size = new System.Drawing.Size(287, 17);
             this.browserAskLabel.TabIndex = 0;
             this.browserAskLabel.Text = "Which browser plugins would you like to install?";
-            // 
+            //
             // installPanel
-            // 
+            //
             this.installPanel.Controls.Add(this.progressBar);
             this.installPanel.Controls.Add(this.progressLabel);
             this.installPanel.Controls.Add(this.label2);
@@ -205,52 +205,52 @@ namespace CleanFlashInstaller {
             this.installPanel.Name = "installPanel";
             this.installPanel.Size = new System.Drawing.Size(545, 105);
             this.installPanel.TabIndex = 10;
-            // 
+            //
             // progressLabel
-            // 
+            //
             this.progressLabel.AutoSize = true;
             this.progressLabel.Location = new System.Drawing.Point(46, 30);
             this.progressLabel.Name = "progressLabel";
             this.progressLabel.Size = new System.Drawing.Size(74, 17);
             this.progressLabel.TabIndex = 1;
             this.progressLabel.Text = "Preparing...";
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Installation in progress...";
-            // 
+            //
             // beforeInstallPanel
-            // 
+            //
             this.beforeInstallPanel.Controls.Add(this.beforeInstallLabel);
             this.beforeInstallPanel.Location = new System.Drawing.Point(90, 162);
             this.beforeInstallPanel.Name = "beforeInstallPanel";
             this.beforeInstallPanel.Size = new System.Drawing.Size(545, 105);
             this.beforeInstallPanel.TabIndex = 11;
-            // 
+            //
             // beforeInstallLabel
-            // 
+            //
             this.beforeInstallLabel.AutoSize = true;
             this.beforeInstallLabel.Location = new System.Drawing.Point(3, 2);
             this.beforeInstallLabel.Name = "beforeInstallLabel";
             this.beforeInstallLabel.Size = new System.Drawing.Size(147, 17);
             this.beforeInstallLabel.TabIndex = 12;
             this.beforeInstallLabel.Text = "Allan please add details";
-            // 
+            //
             // completePanel
-            // 
+            //
             this.completePanel.Controls.Add(this.completeLabel);
             this.completePanel.Location = new System.Drawing.Point(90, 162);
             this.completePanel.Name = "completePanel";
             this.completePanel.Size = new System.Drawing.Size(545, 105);
             this.completePanel.TabIndex = 12;
-            // 
+            //
             // completeLabel
-            // 
+            //
             this.completeLabel.AutoSize = true;
             this.completeLabel.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.completeLabel.LinkColor = System.Drawing.Color.White;
@@ -261,9 +261,9 @@ namespace CleanFlashInstaller {
             this.completeLabel.Text = "Allan where are the details?";
             this.completeLabel.VisitedLinkColor = System.Drawing.Color.White;
             this.completeLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.completeLabel_LinkClicked);
-            // 
+            //
             // failurePanel
-            // 
+            //
             this.failurePanel.Controls.Add(this.copyErrorButton);
             this.failurePanel.Controls.Add(this.failureBox);
             this.failurePanel.Controls.Add(this.failureText);
@@ -271,18 +271,18 @@ namespace CleanFlashInstaller {
             this.failurePanel.Name = "failurePanel";
             this.failurePanel.Size = new System.Drawing.Size(545, 105);
             this.failurePanel.TabIndex = 13;
-            // 
+            //
             // failureBox
-            // 
+            //
             this.failureBox.Location = new System.Drawing.Point(4, 44);
             this.failureBox.Multiline = true;
             this.failureBox.Name = "failureBox";
             this.failureBox.ReadOnly = true;
             this.failureBox.Size = new System.Drawing.Size(431, 58);
             this.failureBox.TabIndex = 15;
-            // 
+            //
             // failureText
-            // 
+            //
             this.failureText.AutoSize = true;
             this.failureText.Location = new System.Drawing.Point(3, 2);
             this.failureText.Name = "failureText";
@@ -290,9 +290,9 @@ namespace CleanFlashInstaller {
             this.failureText.TabIndex = 14;
             this.failureText.Text = "Oops! The installation process has encountered an unexpected problem.\r\nThe follow" +
     "ing details could be useful. Press the Retry button to try again.";
-            // 
+            //
             // playerChoicePanel
-            // 
+            //
             this.playerChoicePanel.Controls.Add(this.playerStartMenuLabel);
             this.playerChoicePanel.Controls.Add(this.playerStartMenuBox);
             this.playerChoicePanel.Controls.Add(this.playerDesktopLabel);
@@ -304,9 +304,9 @@ namespace CleanFlashInstaller {
             this.playerChoicePanel.Name = "playerChoicePanel";
             this.playerChoicePanel.Size = new System.Drawing.Size(545, 105);
             this.playerChoicePanel.TabIndex = 10;
-            // 
+            //
             // playerStartMenuLabel
-            // 
+            //
             this.playerStartMenuLabel.AutoSize = true;
             this.playerStartMenuLabel.Location = new System.Drawing.Point(389, 47);
             this.playerStartMenuLabel.Name = "playerStartMenuLabel";
@@ -314,9 +314,9 @@ namespace CleanFlashInstaller {
             this.playerStartMenuLabel.TabIndex = 8;
             this.playerStartMenuLabel.Text = "Create Shortcuts\r\nin Start Menu";
             this.playerStartMenuLabel.Click += new System.EventHandler(this.playerStartMenuLabel_Click);
-            // 
+            //
             // playerDesktopLabel
-            // 
+            //
             this.playerDesktopLabel.AutoSize = true;
             this.playerDesktopLabel.Location = new System.Drawing.Point(210, 47);
             this.playerDesktopLabel.Name = "playerDesktopLabel";
@@ -324,9 +324,9 @@ namespace CleanFlashInstaller {
             this.playerDesktopLabel.TabIndex = 6;
             this.playerDesktopLabel.Text = "Create Shortcuts\r\non Desktop";
             this.playerDesktopLabel.Click += new System.EventHandler(this.playerDesktopLabel_Click);
-            // 
+            //
             // playerLabel
-            // 
+            //
             this.playerLabel.AutoSize = true;
             this.playerLabel.Location = new System.Drawing.Point(24, 47);
             this.playerLabel.Name = "playerLabel";
@@ -334,18 +334,18 @@ namespace CleanFlashInstaller {
             this.playerLabel.TabIndex = 4;
             this.playerLabel.Text = "Install Standalone\r\nFlash Player";
             this.playerLabel.Click += new System.EventHandler(this.playerLabel_Click);
-            // 
+            //
             // playerAskLabel
-            // 
+            //
             this.playerAskLabel.AutoSize = true;
             this.playerAskLabel.Location = new System.Drawing.Point(-2, 2);
             this.playerAskLabel.Name = "playerAskLabel";
             this.playerAskLabel.Size = new System.Drawing.Size(314, 17);
             this.playerAskLabel.TabIndex = 0;
             this.playerAskLabel.Text = "Would you like to install the standalone Flash Player?";
-            // 
+            //
             // nextButton
-            // 
+            //
             this.nextButton.BackColor = System.Drawing.Color.Black;
             this.nextButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.nextButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
@@ -360,9 +360,9 @@ namespace CleanFlashInstaller {
             this.nextButton.Text = "AGREE";
             this.nextButton.UseVisualStyleBackColor = false;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
-            // 
+            //
             // prevButton
-            // 
+            //
             this.prevButton.BackColor = System.Drawing.Color.Black;
             this.prevButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.prevButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
@@ -377,9 +377,9 @@ namespace CleanFlashInstaller {
             this.prevButton.Text = "QUIT";
             this.prevButton.UseVisualStyleBackColor = false;
             this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
-            // 
+            //
             // playerStartMenuBox
-            // 
+            //
             this.playerStartMenuBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.playerStartMenuBox.AutoSize = true;
             this.playerStartMenuBox.Checked = true;
@@ -398,9 +398,9 @@ namespace CleanFlashInstaller {
             this.playerStartMenuBox.Size = new System.Drawing.Size(21, 21);
             this.playerStartMenuBox.TabIndex = 7;
             this.playerStartMenuBox.UseVisualStyleBackColor = true;
-            // 
+            //
             // playerDesktopBox
-            // 
+            //
             this.playerDesktopBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.playerDesktopBox.AutoSize = true;
             this.playerDesktopBox.Checked = true;
@@ -419,9 +419,9 @@ namespace CleanFlashInstaller {
             this.playerDesktopBox.Size = new System.Drawing.Size(21, 21);
             this.playerDesktopBox.TabIndex = 5;
             this.playerDesktopBox.UseVisualStyleBackColor = true;
-            // 
+            //
             // playerBox
-            // 
+            //
             this.playerBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.playerBox.AutoSize = true;
             this.playerBox.Checked = true;
@@ -441,9 +441,9 @@ namespace CleanFlashInstaller {
             this.playerBox.TabIndex = 3;
             this.playerBox.UseVisualStyleBackColor = true;
             this.playerBox.CheckedChanged += new System.EventHandler(this.playerBox_CheckedChanged);
-            // 
+            //
             // activeXBox
-            // 
+            //
             this.activeXBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.activeXBox.AutoSize = true;
             this.activeXBox.Checked = true;
@@ -462,9 +462,9 @@ namespace CleanFlashInstaller {
             this.activeXBox.Size = new System.Drawing.Size(21, 21);
             this.activeXBox.TabIndex = 7;
             this.activeXBox.UseVisualStyleBackColor = true;
-            // 
+            //
             // netscapeBox
-            // 
+            //
             this.netscapeBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.netscapeBox.AutoSize = true;
             this.netscapeBox.Checked = true;
@@ -483,9 +483,9 @@ namespace CleanFlashInstaller {
             this.netscapeBox.Size = new System.Drawing.Size(21, 21);
             this.netscapeBox.TabIndex = 5;
             this.netscapeBox.UseVisualStyleBackColor = true;
-            // 
+            //
             // pepperBox
-            // 
+            //
             this.pepperBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.pepperBox.AutoSize = true;
             this.pepperBox.Checked = true;
@@ -504,9 +504,9 @@ namespace CleanFlashInstaller {
             this.pepperBox.Size = new System.Drawing.Size(21, 21);
             this.pepperBox.TabIndex = 3;
             this.pepperBox.UseVisualStyleBackColor = true;
-            // 
+            //
             // disclaimerBox
-            // 
+            //
             this.disclaimerBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.disclaimerBox.AutoSize = true;
             this.disclaimerBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -524,9 +524,9 @@ namespace CleanFlashInstaller {
             this.disclaimerBox.TabIndex = 2;
             this.disclaimerBox.UseVisualStyleBackColor = true;
             this.disclaimerBox.CheckedChanged += new System.EventHandler(this.disclaimerBox_CheckedChanged);
-            // 
+            //
             // copyErrorButton
-            // 
+            //
             this.copyErrorButton.BackColor = System.Drawing.Color.Black;
             this.copyErrorButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.copyErrorButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
@@ -541,9 +541,9 @@ namespace CleanFlashInstaller {
             this.copyErrorButton.Text = "COPY";
             this.copyErrorButton.UseVisualStyleBackColor = false;
             this.copyErrorButton.Click += new System.EventHandler(this.copyErrorButton_Click);
-            // 
+            //
             // progressBar
-            // 
+            //
             this.progressBar.Location = new System.Drawing.Point(49, 58);
             this.progressBar.Maximum = 100;
             this.progressBar.Minimum = 0;
@@ -553,18 +553,18 @@ namespace CleanFlashInstaller {
             this.progressBar.Size = new System.Drawing.Size(451, 23);
             this.progressBar.TabIndex = 2;
             this.progressBar.Value = 0;
-            // 
+            //
             // debugChoicePanel
-            // 
+            //
             this.debugChoicePanel.Controls.Add(this.debugButton);
             this.debugChoicePanel.Controls.Add(this.debugAskLabel);
             this.debugChoicePanel.Location = new System.Drawing.Point(90, 163);
             this.debugChoicePanel.Name = "debugChoicePanel";
             this.debugChoicePanel.Size = new System.Drawing.Size(545, 105);
             this.debugChoicePanel.TabIndex = 11;
-            // 
+            //
             // debugAskLabel
-            // 
+            //
             this.debugAskLabel.AutoSize = true;
             this.debugAskLabel.Location = new System.Drawing.Point(-2, 2);
             this.debugAskLabel.Name = "debugAskLabel";
@@ -573,9 +573,9 @@ namespace CleanFlashInstaller {
             this.debugAskLabel.Text = "Would you like to install the debug version of Clean Flash Player?\r\nYou should on" +
     "ly choose the debug version if you are planning to create Flash applications.\r\nI" +
     "f you are not sure, simply press NEXT.";
-            // 
+            //
             // debugButton
-            // 
+            //
             this.debugButton.BackColor = System.Drawing.Color.Black;
             this.debugButton.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.debugButton.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
@@ -590,9 +590,9 @@ namespace CleanFlashInstaller {
             this.debugButton.Text = "INSTALL DEBUG VERSION";
             this.debugButton.UseVisualStyleBackColor = false;
             this.debugButton.Click += new System.EventHandler(this.debugButton_Click);
-            // 
+            //
             // InstallForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -688,4 +688,3 @@ namespace CleanFlashInstaller {
         private System.Windows.Forms.Label debugAskLabel;
     }
 }
-

@@ -10,7 +10,7 @@ namespace CleanFlashInstaller {
         private static string COMPLETE_INSTALL_TEXT = @"Clean Flash Player has been successfully installed!
 Don't forget, Flash Player is no longer compatible with new browsers. We recommend using:
    •  Older Google Chrome ≤ 87
-   •  Older Mozilla Firefox ≤ 84 or Basilisk
+   •  Older Mozilla Firefox ≤ 84 or Waterfox
 
 For Flash Player updates, check out Clean Flash Player's website!";
         private static string COMPLETE_UNINSTALL_TEXT = @"
@@ -101,7 +101,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
                 text = "You are about to uninstall Clean Flash Player.\nPlease close all browsers, including Google Chrome, Mozilla Firefox and Internet Explorer.\n\nThe installer will completely remove all versions of Flash Player from this computer,\nincluding Clean Flash Player and older versions of Adobe Flash Player.";
                 nextButton.Text = "UNINSTALL";
             }
-            
+
             beforeInstallLabel.Text = text;
             beforeInstallPanel.Visible = true;
             prevButton.Text = "BACK";
@@ -188,7 +188,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
             Text = string.Format("Clean Flash Player {0} Installer", version);
 
             OpenDisclaimerPanel();
-            CheckAgreeBox();    
+            CheckAgreeBox();
         }
 
         private void prevButton_Click(object sender, EventArgs e) {
@@ -284,7 +284,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
 
         private void completeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             if (e.Link.Start == 212) {
-                Process.Start("https://basilisk-browser.org");
+                Process.Start("https://classic.waterfox.net");
             } else {
                 Process.Start("https://cleanflash.github.io");
             }
