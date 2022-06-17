@@ -1,10 +1,10 @@
 # Clean Flash Player
 
-[![Patreon](https://img.shields.io/badge/Kofi-donate-purple.svg)](https://ko-fi.com/disyer) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/darktohka/FlashPatch/blob/master/LICENSE)
+[![Patreon](https://img.shields.io/badge/Kofi-donate-purple.svg)](https://ko-fi.com/disyer) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://gitlab.com/cleanflash/installer/-/blob/master/LICENSE)
 
 ![Image of Clean Flash Player](https://i.imgur.com/565LJBI.png)
 
-[Download latest version](https://github.com/CleanFlash/installer/releases/latest)
+[Download latest version](https://gitlab.com/cleanflash/installer/-/releases)
 
 ## What's this?
 
@@ -24,14 +24,14 @@ Newer versions of Google Chrome and Mozilla Firefox do not support Flash Player 
 
 To keep using Flash Player on **Google Chrome**, install an older version of Chrome. The last supported version is Chrome 87.0.4280.168.
 
-To keep using Flash Player on **Mozilla Firefox**, install [**Waterfox**](https://waterfox.net) or [**Basilisk Browser**](https://basilisk-browser.org). Both of them are forks of Mozilla Firefox with built-in Flash Player support.
+To keep using Flash Player on **Mozilla Firefox**, install [**Basilisk Browser**](https://basilisk-browser.org) or [**K-Meleon**](http://kmeleonbrowser.org/forum/read.php?19,154431). Both of them are forks of Mozilla Firefox with built-in Flash Player support.
 
 **Internet Explorer** still supports Flash Player on Windows.
 
 ## Usage
 
 - Make sure you have a compatible browser to use Flash Player with
-- Download the latest version from [GitHub](https://github.com/CleanFlash/installer/releases/latest)
+- Download the latest version from [GitLab](https://gitlab.com/cleanflash/installer/-/releases)
 - Extract the installer and run it
 - Accept the disclaimer
 - Choose which browser plugins to install

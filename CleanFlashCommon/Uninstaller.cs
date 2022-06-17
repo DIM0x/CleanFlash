@@ -80,7 +80,7 @@ namespace CleanFlashCommon {
 
             // Remove Flash Center cache and user data
             FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Flash_Center"));
-            
+
             // Remove shared start menu shortcuts
             FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu), "Programs", "Flash Center"));
             FileUtil.WipeFolder(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Programs", "Flash Center"));
@@ -93,14 +93,18 @@ namespace CleanFlashCommon {
             // Remove Flash Player from Program Files
             FileUtil.WipeFolder(SystemInfo.GetProgramFlash32Path());
 
-            // Remove spyware dropped by Flash Center in the temporary folder   
+            // Remove spyware dropped by Flash Center in the temporary folder
             string tempFolder = Path.GetTempPath();
 
             foreach (string dir in Directory.GetDirectories(tempFolder)) {
                 string parentName = Path.GetFileName(dir);
 
                 if (parentName.Length == 11 && parentName.EndsWith(".tmp")) {
-                    FileUtil.WipeFolder(dir);
+                    try {
+                        FileUtil.WipeFolder(dir);
+                    } catch {
+                        // Oh well...
+                    }
                 }
             }
 
