@@ -205,8 +205,8 @@ namespace CleanFlashCommon {
                         RuntimeHelpers.PrepareConstrainedRegions();
 
                         try { } finally {
-                            // CER guarantees that the address of the allocated 
-                            // memory is actually assigned to ptr if an 
+                            // CER guarantees that the address of the allocated
+                            // memory is actually assigned to ptr if an
                             // asynchronous exception occurs.
                             ptr = Marshal.AllocHGlobal(length);
                         }
@@ -223,7 +223,7 @@ namespace CleanFlashCommon {
 
                             for (int i = 0; i < handleCount; i++) {
                                 SYSTEM_HANDLE_ENTRY handleEntry = (SYSTEM_HANDLE_ENTRY) Marshal.PtrToStructure((IntPtr)((int)ptr + offset), typeof(SYSTEM_HANDLE_ENTRY));
-                                
+
                                 if (handleEntry.OwnerPid == processId) {
                                     IntPtr handle = (IntPtr) handleEntry.HandleValue;
                                     SystemHandleType handleType;
@@ -245,8 +245,8 @@ namespace CleanFlashCommon {
                             }
                         }
                     } finally {
-                        // CER guarantees that the allocated memory is freed, 
-                        // if an asynchronous exception occurs. 
+                        // CER guarantees that the allocated memory is freed,
+                        // if an asynchronous exception occurs.
                         Marshal.FreeHGlobal(ptr);
                     }
                 } while (ret == NT_STATUS.STATUS_INFO_LENGTH_MISMATCH);
@@ -294,8 +294,8 @@ namespace CleanFlashCommon {
                 RuntimeHelpers.PrepareConstrainedRegions();
 
                 try { } finally {
-                    // CER guarantees the assignment of the allocated 
-                    // memory address to ptr, if an ansynchronous exception 
+                    // CER guarantees the assignment of the allocated
+                    // memory address to ptr, if an ansynchronous exception
                     // occurs.
                     ptr = Marshal.AllocHGlobal(length);
                 }
@@ -306,7 +306,7 @@ namespace CleanFlashCommon {
                     RuntimeHelpers.PrepareConstrainedRegions();
                     try { } finally {
                         // CER guarantees that the previous allocation is freed,
-                        // and that the newly allocated memory address is 
+                        // and that the newly allocated memory address is
                         // assigned to ptr if an asynchronous exception occurs.
                         Marshal.FreeHGlobal(ptr);
                         ptr = Marshal.AllocHGlobal(length);
@@ -318,7 +318,7 @@ namespace CleanFlashCommon {
                     return fileName.Length != 0;
                 }
             } finally {
-                // CER guarantees that the allocated memory is freed, 
+                // CER guarantees that the allocated memory is freed,
                 // if an asynchronous exception occurs.
                 Marshal.FreeHGlobal(ptr);
             }
