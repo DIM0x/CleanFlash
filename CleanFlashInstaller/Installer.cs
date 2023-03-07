@@ -12,15 +12,24 @@ using IWshRuntimeLibrary;
 namespace CleanFlashInstaller {
     public class Installer {
         public static void RegisterActiveX(string filename) {
+            string relativeFilename = Path.GetFileName(filename);
+            ProcessStartInfo info = new ProcessStartInfo {
+                FileName = "regsvr32.exe",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
             Directory.SetCurrentDirectory(Path.GetDirectoryName(filename));
-            ExitedProcess process = ProcessUtils.RunProcess(
-                new ProcessStartInfo {
-                    FileName = "regsvr32.exe",
-                    Arguments = "/s " + Path.GetFileName(filename),
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            );
+
+            info.Arguments = "/s /u " + relativeFilename;
+            ExitedProcess process = ProcessUtils.RunProcess(info);
+
+            if (!process.IsSuccessful) {
+                throw new InstallException(string.Format("Failed to unregister ActiveX plugin: error code {0}\n\n{1}", process.ExitCode, process.Output));
+            }
+
+            info.Arguments = "/s " + relativeFilename;
+            process = ProcessUtils.RunProcess(info);
 
             if (!process.IsSuccessful) {
                 throw new InstallException(string.Format("Failed to register ActiveX plugin: error code {0}\n\n{1}", process.ExitCode, process.Output));

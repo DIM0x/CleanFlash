@@ -10,11 +10,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <StartupObject></StartupObject>
-    <Product>Clean Flash Player 34.0.0.267 Uninstaller</Product>
-    <AssemblyTitle>Clean Flash Player 34.0.0.267 Uninstaller</AssemblyTitle>
-    <FileVersion>34.0.0.267</FileVersion>
-    <AssemblyVersion>34.0.0.267</AssemblyVersion>
-    <Version>34.0.0.267</Version>
+    <Product>Clean Flash Player 34.0.0.282 Uninstaller</Product>
+    <AssemblyTitle>Clean Flash Player 34.0.0.282 Uninstaller</AssemblyTitle>
+    <FileVersion>34.0.0.282</FileVersion>
+    <AssemblyVersion>34.0.0.282</AssemblyVersion>
+    <Version>34.0.0.282</Version>
     <Authors>FlashPatch Team</Authors>
 	<Company>FlashPatch Team</Company>
   </PropertyGroup>

@@ -9,7 +9,9 @@ namespace CleanFlashInstaller {
     public partial class InstallForm : Form, IProgressForm {
         private static string COMPLETE_INSTALL_TEXT = @"Clean Flash Player has been successfully installed!
 Don't forget, Flash Player is no longer compatible with new browsers.
-For browser recommendations and Flash Player updates, check out Clean Flash Player's website!";
+
+For browser recommendations and Flash Player updates,
+check out Clean Flash Player's website!";
         private static string COMPLETE_UNINSTALL_TEXT = @"
 All versions of Flash Player have been successfully uninstalled.
 
@@ -124,8 +126,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
 
             if (pepperBox.Checked || netscapeBox.Checked || activeXBox.Checked) {
                 completeLabel.Text = COMPLETE_INSTALL_TEXT;
-                completeLabel.Links.Add(new LinkLabel.Link(212, 8));
-                completeLabel.Links.Add(new LinkLabel.Link(260, 28));
+                completeLabel.Links.Add(new LinkLabel.Link(191, 28));
             } else {
                 completeLabel.Text = COMPLETE_UNINSTALL_TEXT;
                 completeLabel.Links.Add(new LinkLabel.Link(110, 28));
@@ -280,11 +281,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
         }
 
         private void completeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            if (e.Link.Start == 212) {
-                Process.Start("https://classic.waterfox.net");
-            } else {
-                Process.Start("https://gitlab.com/cleanflash/installer#clean-flash-player");
-            }
+            Process.Start("https://gitlab.com/cleanflash/installer#clean-flash-player");
         }
 
         private void copyErrorButton_Click(object sender, EventArgs e) {

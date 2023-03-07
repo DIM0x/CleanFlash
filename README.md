@@ -30,13 +30,12 @@ To keep using Flash Player on **Mozilla Firefox**, install [**Waterfox Classic**
 
 <details><summary>Alternatives</summary>
 
-- Cent Browser 4.3.9.248 [(link)](https://static.centbrowser.com/win_stable/4.3.9.248/)
-- Chromium 88.0.4285.0   
-[Link](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html): specify your platform and select/enter 814251
-- [Basilisk](https://www.basilisk-browser.org/)
-- [Otter Browser](https://otter-browser.org/)
-- Portable old browser versions [(guide)](https://www.raymond.cc/blog/how-to-enable-flash-support-in-firefox-portable/)
-- roytam's XP-compatible browser builds [(link)](http://rtfreesoft.blogspot.com/)
+- [Cent Browser 4.3.9.248](https://static.centbrowser.com/win_stable/4.3.9.248)
+- [Chromium 88.0.4285.0](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html): specify your platform and select/enter 814251
+- [Basilisk](https://www.basilisk-browser.org)
+- [Otter Browser](https://otter-browser.org)
+- [roytam's XP-compatible browser builds](http://rtfreesoft.blogspot.com)
+- [Portable old browser versions (guide)](https://www.raymond.cc/blog/how-to-enable-flash-support-in-firefox-portable)
 
 </details> 
 

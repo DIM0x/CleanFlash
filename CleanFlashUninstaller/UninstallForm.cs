@@ -114,11 +114,7 @@ namespace CleanFlashUninstaller {
         }
 
         private void completeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            if (e.Link.Start == 212) {
-                Process.Start("https://classic.waterfox.net");
-            } else {
-                Process.Start("https://gitlab.com/cleanflash/installer#clean-flash-player");
-            }
+            Process.Start("https://gitlab.com/cleanflash/installer#clean-flash-player");
         }
 
         private void copyErrorButton_Click(object sender, EventArgs e) {
