@@ -40,6 +40,7 @@ namespace CleanFlashCommon {
 
         public static string GetAPILink() {
             return "https://api.github.com/repos/" + AUTHOR + "/" + REPO + "/releases/latest";
+            // obsolete, todo: switch to new api
         }
 
         public static string GetFlashVersion() {
