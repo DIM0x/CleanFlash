@@ -8,11 +8,8 @@ using System.Windows.Forms;
 namespace CleanFlashInstaller {
     public partial class InstallForm : Form, IProgressForm {
         private static string COMPLETE_INSTALL_TEXT = @"Clean Flash Player has been successfully installed!
-Don't forget, Flash Player is no longer compatible with new browsers. We recommend using:
-   •  Older Google Chrome ≤ 87
-   •  Older Mozilla Firefox ≤ 84 or Waterfox
-
-For Flash Player updates, check out Clean Flash Player's website!";
+Don't forget, Flash Player is no longer compatible with new browsers.
+For browser recommendations and Flash Player updates, check out Clean Flash Player's website!";
         private static string COMPLETE_UNINSTALL_TEXT = @"
 All versions of Flash Player have been successfully uninstalled.
 
@@ -286,7 +283,7 @@ If you ever change your mind, check out Clean Flash Player's website!";
             if (e.Link.Start == 212) {
                 Process.Start("https://classic.waterfox.net");
             } else {
-                Process.Start("https://cleanflash.github.io");
+                Process.Start("https://gitlab.com/cleanflash/installer#clean-flash-player");
             }
         }
 

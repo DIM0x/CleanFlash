@@ -28,14 +28,27 @@ To keep using Flash Player on **Mozilla Firefox**, install [**Waterfox Classic**
 
 **Internet Explorer** still supports Flash Player on Windows 10.
 
+<details><summary>Alternatives</summary>
+
+- Cent Browser 4.3.9.248 [(link)](https://static.centbrowser.com/win_stable/4.3.9.248/)
+- Chromium 88.0.4285.0   
+[Link](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html): specify your platform and select/enter 814251
+- [Basilisk](https://www.basilisk-browser.org/)
+- [Otter Browser](https://otter-browser.org/)
+- Portable old browser versions [(guide)](https://www.raymond.cc/blog/how-to-enable-flash-support-in-firefox-portable/)
+- roytam's XP-compatible browser builds [(link)](http://rtfreesoft.blogspot.com/)
+
+</details> 
+
 ## Usage
 
 - Make sure you have a compatible browser to use Flash Player with
 - Download the latest version from [GitLab](https://gitlab.com/cleanflash/installer/-/releases)
-- Extract the installer and run it
+- Launch installer
 - Accept the disclaimer
 - Choose which browser plugins to install
 - Choose to install the standalone projector or not
+- Choose to install the debug build or not
 - Close all browser windows, or let the installer close them for you
 - Press the "Install" button and wait for Flash Player to install
 - Enjoy using Flash Player!
