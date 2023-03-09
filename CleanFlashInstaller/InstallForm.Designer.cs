@@ -621,6 +621,7 @@ namespace CleanFlashInstaller {
             this.Name = "InstallForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clean Flash Player Dev Installer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InstallForm_FormClosing);
             this.Load += new System.EventHandler(this.InstallForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flashLogo)).EndInit();
             this.disclaimerPanel.ResumeLayout(false);
