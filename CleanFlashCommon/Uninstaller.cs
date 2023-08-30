@@ -27,6 +27,24 @@ namespace CleanFlashCommon {
             WinAPI.AllowModifications();
         }
 
+        public static void UnregisterActiveX(string filename) {
+            string relativeFilename = Path.GetFileName(filename);
+            ProcessStartInfo info = new ProcessStartInfo {
+                FileName = "regsvr32.exe",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(filename));
+
+            info.Arguments = "/s /u " + relativeFilename;
+            ExitedProcess process = ProcessUtils.RunProcess(info);
+
+            if (!process.IsSuccessful) {
+                throw new InstallException(string.Format("Failed to unregister ActiveX plugin: error code {0}\n\n{1}", process.ExitCode, process.Output));
+            }
+        }
+
         public static void UninstallRegistry() {
             if (Environment.Is64BitOperatingSystem) {
                 RegistryManager.ApplyRegistry(Properties.Resources.uninstallRegistry, Properties.Resources.uninstallRegistry64);

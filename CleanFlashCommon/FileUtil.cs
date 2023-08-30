@@ -51,6 +51,10 @@ namespace CleanFlashCommon {
                 return;
             }
 
+            if (file.Extension.ToLower().Equals(".ocx")) {
+                Uninstaller.UnregisterActiveX(file.FullName);
+            }
+
             try {
                 file.IsReadOnly = false;
                 file.Delete();
