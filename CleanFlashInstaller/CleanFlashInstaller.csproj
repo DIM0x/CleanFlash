@@ -7,11 +7,11 @@
     <TargetFramework>net40</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <StartupObject></StartupObject>
-    <Product>Clean Flash Player 34.0.0.295 Installer</Product>
-    <AssemblyTitle>Clean Flash Player 34.0.0.295 Installer</AssemblyTitle>
-    <FileVersion>34.0.0.295</FileVersion>
-    <AssemblyVersion>34.0.0.295</AssemblyVersion>
-    <Version>34.0.0.295</Version>
+    <Product>Clean Flash Player 34.0.0.301 Installer</Product>
+    <AssemblyTitle>Clean Flash Player 34.0.0.301 Installer</AssemblyTitle>
+    <FileVersion>34.0.0.301</FileVersion>
+    <AssemblyVersion>34.0.0.301</AssemblyVersion>
+    <Version>34.0.0.301</Version>
     <Authors>FlashPatch Team</Authors>
     <Company>FlashPatch Team</Company>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.18.2" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net40" Version="1.0.2">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net40" Version="1.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
