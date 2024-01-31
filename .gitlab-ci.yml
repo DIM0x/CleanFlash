@@ -1,0 +1,22 @@
+stages:
+  - build
+
+variables:
+  MSBUILD_TARGET: 'CleanFlashInstaller/CleanFlashInstaller.csproj'
+
+before_script:
+  - choco install visualstudio2019buildtools -y
+  - choco install visualstudio2022community --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+  - RefreshEnv.cmd
+
+build:
+  stage: build
+  script:
+    - '& nuget restore'  # restore Nuget dependencies
+    - '& msbuild "$env:MSBUILD_TARGET" /p:Configuration=Release'
+
+artifacts:
+  paths:
+    - 'CleanFlashInstaller/bin/Release/*.exe'
+  only:
+    - tags
