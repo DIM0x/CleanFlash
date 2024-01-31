@@ -2,13 +2,14 @@ stages:
   - build
 
 variables:
+  MSBUILD_PATH: 'C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe'
   MSBUILD_TARGET: 'CleanFlashInstaller/CleanFlashInstaller.csproj'
 
 build:
   stage: build
   script:
     - '& nuget restore'  # restore Nuget dependencies
-    - '& msbuild "$env:MSBUILD_TARGET" /p:Configuration=Release'
+    - '& "$env:MSBUILD_PATH" "$env:MSBUILD_TARGET" /p:Configuration=Release'
   artifacts:
     paths:
     - 'CleanFlashInstaller/bin/Release/*.exe'
