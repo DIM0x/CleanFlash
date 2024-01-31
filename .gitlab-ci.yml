@@ -13,3 +13,5 @@ build:
     paths:
     - 'CleanFlashInstaller/bin/Release/*.exe'
     expire_in: never
+  tags:
+  - windows
